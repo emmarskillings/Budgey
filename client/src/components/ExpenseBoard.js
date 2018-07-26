@@ -1,10 +1,10 @@
 import React from "react";
-
+import "./ExpenseBoard.css";
 class ExpenseBoard extends React.Component {
   render() {
     return (
-      <div>
-        Expense board content here.
+      <div className="expense-board">
+        <h3>Expense board content here.</h3>
       </div>
     )
   }
