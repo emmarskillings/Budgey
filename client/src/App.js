@@ -14,13 +14,13 @@ class App extends Component {
         <Container>
           <Row>
             <Col md="3">
-              <ExpenseBoard />
+              <IncomeBoard />
             </Col>
             <Col md="6">
               <Summary />
             </Col>
             <Col md="3">
-              <IncomeBoard />
+              <ExpenseBoard />
             </Col>
           </Row>
         </Container>
