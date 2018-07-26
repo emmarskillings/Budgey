@@ -10,7 +10,7 @@ import axios from 'axios';
 class App extends Component {
   componentDidMount() {
   axios
-    .get("http://localhost:3001/api/v1/resources.json")
+    .get("http://localhost:3001/api/v1/category.json")
     .then(response => {
       console.log(response);
       this.setState({

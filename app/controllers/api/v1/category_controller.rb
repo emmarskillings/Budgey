@@ -3,8 +3,8 @@ module Api::V1
   class CategoryController < ApplicationController
 
     def index
-      @category = Category.all
-      render json: @category 
+      @categories = Category.all
+      render json: @categories
     end
 
     def show
