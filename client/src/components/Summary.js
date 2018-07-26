@@ -3,7 +3,7 @@ import React from "react";
 class Summary extends React.Component {
   render() {
     return (
-      <div>
+      <div className="summary-board">
         Summary content here.
       </div>
     )
