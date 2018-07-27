@@ -9,7 +9,7 @@ class HomePage extends Component {
     var customRowStyling = { marginLeft: 0 };
 
     return (
-      <Container className="body">
+      <Container>
         <Row style={customRowStyling}>
           <Col md="3">
             <IncomeBoard />
