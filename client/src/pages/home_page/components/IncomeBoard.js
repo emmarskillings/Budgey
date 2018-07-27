@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import "./IncomeBoard.css";
 
-class IncomeBoard extends React.Component {
+class IncomeBoard extends Component {
   render() {
     return (
       <div className="income-board row justify-content-center text-center col-md-12 py-4">

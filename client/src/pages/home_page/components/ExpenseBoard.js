@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import "./ExpenseBoard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-class ExpenseBoard extends React.Component {
+class ExpenseBoard extends Component {
   render() {
     return <div className="expense-board row justify-content-center text-center col-md-12 py-4">
         <h4>Expense Boards</h4>

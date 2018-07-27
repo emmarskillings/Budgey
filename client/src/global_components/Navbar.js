@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from "react";
 import "./Navbar.css";
 
-class Navbar extends React.Component {
+class Navbar extends Component {
   render() {
     return (
       <nav className="navbar justify-content-between mb-4">
