@@ -56,7 +56,7 @@ class ExpenseBoard extends React.Component {
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-lg category-btn">Add Category</button>
+        <button type="button" className="btn btn-lg category-btn">Add Category</button>
       </div>;
   }
 }
