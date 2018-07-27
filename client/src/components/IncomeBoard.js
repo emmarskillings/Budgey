@@ -4,7 +4,7 @@ import "./IncomeBoard.css";
 class IncomeBoard extends React.Component {
   render() {
     return (
-      <div className="income-board row justify-content-center text-center border border-dark col-md-12 py-4">
+      <div className="income-board row justify-content-center text-center col-md-12 py-4">
         <h4>Income Boards</h4>
         <div className="card my-2">
           <div className="card-body">
@@ -30,6 +30,7 @@ class IncomeBoard extends React.Component {
             <h6 className="card-subtitle mb-2 text-muted">Random money - $84</h6>
           </div>
         </div>
+        <button type="button" class="btn btn-lg income-btn">Add Income Source</button>
       </div>
     )
   }

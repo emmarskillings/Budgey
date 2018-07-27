@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class ExpenseBoard extends React.Component {
   render() {
-    return <div className="expense-board row justify-content-center text-center border border-dark col-md-12 py-4">
+    return <div className="expense-board row justify-content-center text-center col-md-12 py-4">
         <h4>Expense Boards</h4>
         <div className="row">
           <div className="col-md-6">
@@ -25,7 +25,7 @@ class ExpenseBoard extends React.Component {
             <div className="card my-2 mx-1">
               <div className="card-body">
                 <FontAwesomeIcon icon="utensils" className="icons pb-2" />
-                <h5 className="card-title">Food &amp; Dining</h5>
+                <h5 className="card-title">Food</h5>
                 <h6 className="card-subtitle mb-2 text-muted">$189</h6>
               </div>
             </div>
@@ -56,6 +56,7 @@ class ExpenseBoard extends React.Component {
             </div>
           </div>
         </div>
+        <button type="button" class="btn btn-lg category-btn">Add Category</button>
       </div>;
   }
 }
