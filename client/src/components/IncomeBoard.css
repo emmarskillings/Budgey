@@ -1,6 +1,10 @@
 .income-board {
   background-color: #fdb44b;
 }
+.income-board h4 {
+  font-weight: 600;
+  font-size: 22px;
+}
 .income-board .card {
   width: 11rem;
 }
@@ -12,4 +16,6 @@
 }
 .income-btn {
   margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
 }
