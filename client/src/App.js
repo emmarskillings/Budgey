@@ -25,14 +25,17 @@ class App extends Component {
   }
 
   render() {
+    var bgColor = {
+      "White": "#f6f6f6"
+    };
     var customRowStyling = {
       marginLeft: 0
     };
 
     return (
-      <div>
+      <div style={{backgroundColor: bgColor.White, height: "100vh"}}>
         <Navbar />
-        <Container>
+        <Container className="body">
           <Row style={customRowStyling}>
             <Col md="3">
               <IncomeBoard />
