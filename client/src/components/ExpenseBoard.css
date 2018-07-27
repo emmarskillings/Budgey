@@ -1,5 +1,6 @@
 .expense-board {
   border-width: 2px !important;
+  background-color: #fdb44b;
 }
 .expense-board .card {
   width: 7.6rem;
