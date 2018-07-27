@@ -22,9 +22,6 @@ class App extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-
-=======
       <div>
         <Navbar />
         <Container>
@@ -41,7 +38,6 @@ class App extends Component {
           </Row>
         </Container>
       </div>
->>>>>>> e99e7e991ca1a8b34b489970f5bbaf4e6768cf84
     );
   }
 }
