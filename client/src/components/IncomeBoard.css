@@ -1,12 +1,12 @@
 .income-board {
   border-width: 2px !important;
 }
-.card {
-  width: 12rem;
+.income-board .card {
+  width: 11rem;
 }
-.card-body h5 {
-  font-size: 17px;
+.income-board .card-body h5 {
+  font-size: 15px;
 }
-.card-body h6 {
-  font-size: 12px;
+.income-board .card-body h6 {
+  font-size: 13px;
 }
