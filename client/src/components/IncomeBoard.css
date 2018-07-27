@@ -1,5 +1,6 @@
 .income-board {
   border-width: 2px !important;
+  background-color: #fdb44b;
 }
 .income-board .card {
   width: 11rem;
