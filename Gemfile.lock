@@ -43,6 +43,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
+    bcrypt (3.1.12)
     bootsnap (1.3.1)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -51,13 +52,10 @@ GEM
     crass (1.0.4)
     erubi (1.7.1)
     ffi (1.9.25)
-<<<<<<< HEAD
     figaro (1.1.1)
       thor (~> 0.14)
-=======
     foreman (0.82.0)
       thor (~> 0.19.1)
->>>>>>> master
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
@@ -142,14 +140,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
-<<<<<<< HEAD
   figaro
-  jwt
-=======
   foreman (~> 0.82.0)
->>>>>>> master
+  jwt
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
@@ -163,4 +159,4 @@ RUBY VERSION
    ruby 2.3.5p376
 
 BUNDLED WITH
-   1.16.3
+   1.16.2
