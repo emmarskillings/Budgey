@@ -3,9 +3,7 @@ import "./NewExpenseModal.css";
 
 class NewExpenseModal extends Component {
   render() {
-    return (
-      <div>Popup content here!</div >
-    );
+    return <div>Popup content here!</div>;
   }
 }
 

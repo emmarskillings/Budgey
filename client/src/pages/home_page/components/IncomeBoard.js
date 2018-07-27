@@ -15,7 +15,9 @@ class IncomeBoard extends Component {
         <div className="card my-2">
           <div className="card-body">
             <h5 className="card-title">Dog Walker</h5>
-            <h6 className="card-subtitle mb-2 text-muted">Pup Walker Service - $11/hr</h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              Pup Walker Service - $11/hr
+            </h6>
           </div>
         </div>
         <div className="card my-2">
@@ -27,12 +29,16 @@ class IncomeBoard extends Component {
         <div className="card my-2">
           <div className="card-body">
             <h5 className="card-title">Other</h5>
-            <h6 className="card-subtitle mb-2 text-muted">Random money - $84</h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              Random money - $84
+            </h6>
           </div>
         </div>
-        <button type="button" className="btn btn-lg income-btn">Add Income Source</button>
+        <button type="button" className="btn btn-lg income-btn">
+          Add Income Source
+        </button>
       </div>
-    )
+    );
   }
 }
 
