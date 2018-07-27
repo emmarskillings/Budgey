@@ -30,7 +30,7 @@ class IncomeBoard extends React.Component {
             <h6 className="card-subtitle mb-2 text-muted">Random money - $84</h6>
           </div>
         </div>
-        <button type="button" class="btn btn-lg income-btn">Add Income Source</button>
+        <button type="button" className="btn btn-lg income-btn">Add Income Source</button>
       </div>
     )
   }
