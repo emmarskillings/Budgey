@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "reactstrap";
 import "./App.css";
-import Navbar from './components/Navbar';
-import ExpenseBoard from './components/ExpenseBoard';
-import Summary from './components/Summary';
-import IncomeBoard from './components/IncomeBoard';
+import Navbar from './global_components/Navbar';
+import ExpenseBoard from './pages/home_page/components/ExpenseBoard';
+import Summary from './pages/home_page/components/Summary';
+import IncomeBoard from './pages/home_page/components/IncomeBoard';
 import axios from 'axios';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faHome, faCar, faUtensils, faTruck, faGamepad, faMoon } from "@fortawesome/free-solid-svg-icons";
