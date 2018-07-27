@@ -8,21 +8,12 @@ import IncomeBoard from './components/IncomeBoard';
 import axios from 'axios';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faHome, faCar, faUtensils, faTruck, faGamepad, faMoon } from "@fortawesome/free-solid-svg-icons";
+import CategoryContainer from './components/CategoryContainer'
 
 library.add(faHome, faCar, faUtensils, faTruck, faGamepad, faMoon);
 
 class App extends Component {
-  componentDidMount() {
-  axios
-    .get("http://localhost:3001/api/v1/resources.json")
-    .then(response => {
-      console.log(response);
-      this.setState({
-        resources: response.data
-      });
-    })
-    .catch(error => console.log(error));
-  }
+
 
   render() {
     var bgColor = {
@@ -42,6 +33,7 @@ class App extends Component {
             </Col>
             <Col md="6">
               <Summary />
+              <CategoryContainer />
             </Col>
             <Col md="3">
               <ExpenseBoard />
