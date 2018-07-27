@@ -1,5 +1,9 @@
 .expense-board {
-  border-width: 2px !important;
+  background-color: #fdb44b;
+}
+.expense-board h4 {
+  font-weight: 600;
+  font-size: 22px;
 }
 .expense-board .card {
   width: 7.6rem;
@@ -12,4 +16,9 @@
 }
 .expense-board .icons {
   font-size: 2.4rem;
+}
+.category-btn {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
 }

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Summary.css";
 
-class Summary extends React.Component {
+class Summary extends Component {
   render() {
     return (
       <div className="summary-board row justify-content-center text-center border border-dark col-md-12 py-4">
