@@ -24,9 +24,6 @@
     "reactjs-popup": "^1.1.1",
     "reactstrap": "^6.3.0"
 
-    
-   
-
   },
   "scripts": {
     "start": "react-scripts start",
