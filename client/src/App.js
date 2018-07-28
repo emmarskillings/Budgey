@@ -31,7 +31,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{ height: "100vh" }}>
+      <div>
         <Navbar />
         <HomePage />
       </div>
