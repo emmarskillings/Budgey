@@ -19,11 +19,11 @@ library.add(faHome, faCar, faUtensils, faTruck, faGamepad, faMoon);
 class App extends Component {
   componentDidMount() {
     axios
-      .get("http://localhost:3001/api/v1/resources.json")
+      .get("http://localhost:3002/api/v1/category.json")
       .then(response => {
         console.log(response);
         this.setState({
-          resources: response.data
+          categories: response.data
         });
       })
       .catch(error => console.log(error));
