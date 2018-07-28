@@ -19,9 +19,23 @@ class NewExpenseModal extends Component {
             />
           </div>
         </div>
+        <div class="form-group row px-4">
+          <label for="category-icon" className="col-sm-3 col-form-label">
+            Select icon:
+          </label>
+          <div className="col-sm-9">
+            <select class="form-control" id="category-icon">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
         <div className="form-group row px-4">
           <label for="max-goal" className="col-sm-3 col-form-label">
-            Maximum Goal Spending Amount:
+            Maximum Goal:
           </label>
           <div className="col-sm-9">
             <input
