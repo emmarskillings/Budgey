@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import ExpenseBoard from './components/ExpenseBoard';
 import Summary from './components/Summary';
 import IncomeBoard from './components/IncomeBoard';
-import axios from 'axios';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faHome, faCar, faUtensils, faTruck, faGamepad, faMoon } from "@fortawesome/free-solid-svg-icons";
 import CategoryContainer from './components/CategoryContainer'

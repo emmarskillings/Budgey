@@ -22,35 +22,35 @@ CoolCatTeenX.categories.create!({
 	name: 'School',
 	board_type: 'expense',
 	goal: 100,
-	current_total: 0
+	current_total: 1212
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Transportation',
 	board_type: 'expense',
 	goal: 60,
-	current_total: 0
+	current_total: 212
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Hobbies',
 	board_type: 'expense',
 	goal: 250,
-	current_total: 0
+	current_total: 5454
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Allowance',
 	board_type: 'income',
 	goal: 100,
-	current_total: 0
+	current_total: 54
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Babysit',
 	board_type: 'income',
 	goal: 10000,
-	current_total: 0
+	current_total: 54545
 })
 
 entry1 = Entry.create!({

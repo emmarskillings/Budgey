@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import {Doughnut} from 'react-chartjs-2'
+
 
 
 
 
 class CategoryContainer extends Component {
+
+
 
 	constructor(props) {
 	  super(props);
@@ -15,7 +19,7 @@ class CategoryContainer extends Component {
 
 	componentDidMount() {
 	axios
-	  .get("http://localhost:3001/api/v1/category.json")
+	  .get("http://localhost:3002/api/v1/category.json")
 	  .then(response => {
 	    console.log(response);
 	    this.setState({
@@ -25,22 +29,34 @@ class CategoryContainer extends Component {
 	  .catch(error => console.log(error));
 	}
   render() {
-  return (
-    <div>
-      {this.state.categories.map((idea) => {
-        return(
-          <div className="tile" key={idea.id} >
-            <h4>{idea.name}</h4>
-            <p>{idea.board_type}</p>
-            <p>{idea.created_at}</p>
-            <p>{idea.goal}</p>
-            <p>{idea.current_total}</p>
-          </div>
-        )       
-      })}
-    </div>
-  );
-    }
+  	var dataPoint = [];
+  	var name = this.state.categories;
+  	name.forEach(function(element){
+
+  		var to_add = {value: element.current_total, label: element.name}
+  		dataPoint.push(to_add)
+
+  	});
+
+  	var options = {
+  	  legend: {
+  	  	"display": true,
+  	  	"position":"top"
+  	  
+  	  },
+  	}
+
+
+  
+  console.log(dataPoint)
+  return(
+  	<div>
+  	<p>dfsdfsd</p>
+  	<Doughnut data={dataPoint} options={options} width='600' height="250"/>
+  	</div>
+  	)
+
+	}
 }
 
 export default CategoryContainer;
