@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./IncomeBoard.css";
+import NewIncomeModal from "./NewIncomeModal";
+import Popup from "reactjs-popup";
 
 class IncomeBoard extends Component {
   render() {
@@ -34,9 +36,17 @@ class IncomeBoard extends Component {
             </h6>
           </div>
         </div>
-        <button type="button" className="btn btn-lg income-btn">
-          Add Income Source
-        </button>
+        <Popup
+          trigger={
+            <button type="button" className="btn btn-lg income-btn">
+              Add Income Source
+            </button>
+          }
+          modal
+          closeOnDocumentClick
+        >
+          <NewIncomeModal />
+        </Popup>
       </div>
     );
   }
