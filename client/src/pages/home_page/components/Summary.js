@@ -22,7 +22,6 @@ class CategoryContainer extends Component {
 	axios
 	  .get("http://localhost:3002/api/v1/category.json")
 	  .then(response => {
-	    console.log(response);
 	    this.setState({
 	      categories: response.data
 	    });
