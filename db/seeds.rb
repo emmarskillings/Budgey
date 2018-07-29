@@ -22,21 +22,21 @@ CoolCatTeenX.categories.create!({
 	name: 'School',
 	board_type: 'expense',
 	goal: 100,
-	current_total: 0
+	current_total: 52
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Transportation',
 	board_type: 'expense',
 	goal: 60,
-	current_total: 0
+	current_total: 20
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Hobbies',
 	board_type: 'expense',
 	goal: 250,
-	current_total: 0
+	current_total: 40
 })
 
 CoolCatTeenX.categories.create!({
@@ -58,7 +58,7 @@ entry1 = Entry.create!({
 	category_id: 1,
 	description: 'Bought binders for 3 classes',
 	amount: 50,
-	date: "10/12/2017" 
+	date: "10/12/2017"
 
 	})
 
@@ -67,7 +67,7 @@ entry2 = Entry.create!({
 	category_id: 1,
 	description: 'Bought Pens for 1 class',
 	amount: 2,
-	date: "10/12/2017" 
+	date: "10/12/2017"
 
 	})
 
@@ -76,7 +76,7 @@ entry3 = Entry.create!({
 	category_id: 2,
 	description: 'Took uber to school',
 	amount: 20,
-	date: "10/12/2017" 
+	date: "10/12/2017"
 
 	})
 
@@ -85,7 +85,7 @@ entry4 = Entry.create!({
 	category_id: 3,
 	description: 'Played laser tag with friends',
 	amount: 40,
-	date: "10/12/2017" 
+	date: "10/12/2017"
 
 	})
 
@@ -94,7 +94,7 @@ entry5 = Entry.create!({
 	category_id: 4,
 	description: 'Allowance for july',
 	amount: 25,
-	date: "10/12/2017" 
+	date: "10/12/2017"
 
 	})
 
@@ -103,10 +103,6 @@ entry6 = Entry.create!({
 	category_id: 4,
 	description: 'Allowance for august',
 	amount: 25,
-	date: "10/12/2017" 
+	date: "10/12/2017"
 
 	})
-
-
-
-
