@@ -19,11 +19,8 @@ class NewExpenseModal extends Component {
 
       axios.post(`http://localhost:3002/api/v1/category.json`, { category })
         .then(res => {
-          console.log(res);
-          console.log(res.data);
+          this.props.update()
         })
-
-      this.props.update()
 
 
     }
