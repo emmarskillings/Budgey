@@ -29,9 +29,9 @@ module Api::V1
 
     def destroy
       @category = Category.find(params[:id])
-      @category.destory
+      @category.destroy
 
-      redirect_to '/'
+      redirect_to '/category'
     end
 
    
