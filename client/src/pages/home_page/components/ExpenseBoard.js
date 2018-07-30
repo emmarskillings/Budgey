@@ -6,21 +6,20 @@ import Popup from "reactjs-popup";
 import { NavLink } from 'react-router-dom'
 
 const makeCardStack = (cards) => {
-  let count = 1;
   const allCards = cards.map(card => {
     switch(card['board_type']){
       case('expense'):
           return(
             <div className="row">
                 <div className="col-md-6">
-                <NavLink to='/expenses'>
-                  <div className="card my-2 mx-1">
-                    <div className="card-body">
-                      <FontAwesomeIcon icon="home" className="icons pb-2" />
-                      <h5 className="card-title">{card['name']}</h5>
-                      <h6 className="card-subtitle mb-2 text-muted">${card['current_total']}</h6>
+                <NavLink to={`/expense/${card['id']}`}>
+                    <div className="card my-2 mx-1">
+                      <div className="card-body">
+                        <FontAwesomeIcon icon="home" className="icons pb-2" />
+                        <h5 className="card-title">{card['name']}</h5>
+                        <h6 className="card-subtitle mb-2 text-muted">${card['current_total']}</h6>
+                      </div>
                     </div>
-                  </div>
                   </NavLink>
                 </div>
               </div>

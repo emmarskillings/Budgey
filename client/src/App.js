@@ -4,7 +4,7 @@ import Navbar from "./global_components/Navbar";
 import HomePage from "./pages/home_page/HomePage";
 import ExpensePage from "./pages/expense_page/ExpensePage";
 import axios from "axios";
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch } from 'react-router-dom';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHome,
@@ -41,16 +41,24 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
-        <Switch>
-          <Route strict path='/home' render={props => (
-            <HomePage categories={this.state.categories} {...props}/>
-            )}
-          />
-        </Switch>
-        <Switch>
-          <Route path='/expenses' component={ExpensePage} />
-        </Switch>
+        { this.state && this.state.categories &&
+          <div>
+            <Navbar />
+            <Switch>
+              <Route strict path='/home' render={props => (
+                <HomePage categories={this.state.categories} {...props}/>
+                )}
+              />
+            </Switch>
+            <Switch>
+              <Route path='/expense/:id' render={props => (
+                <ExpensePage categories={this.state.categories} {...props}/>
+                )}
+
+              />
+            </Switch>
+          </div>
+        }
       </div>
     );
   }
