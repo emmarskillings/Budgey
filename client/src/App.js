@@ -8,32 +8,35 @@ import HomePage from './pages/home_page/HomePage';
 import axios from 'axios';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faHome, faCar, faUtensils, faTruck, faGamepad, faMoon } from "@fortawesome/free-solid-svg-icons";
-import { Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 library.add(faHome, faCar, faUtensils, faTruck, faGamepad, faMoon);
 
 class App extends Component {
   componentDidMount() {
-  axios
-    .get("http://localhost:3001/api/v1/resources.json")
-    .then(response => {
-      console.log(response);
-      this.setState({
-        resources: response.data
-      });
-    })
-    .catch(error => console.log(error));
+  // axios.get("/api/v1/category.json")
+  //   .then(response => {
+  //     console.log(response);
+  //     this.setState({
+  //       resources: response.data
+  //     });
+  //   })
+  //   .catch(error => console.log(error));
   }
 
   render() {
     return (
-      <div style={{height: "100vh"}}>
-        <Navbar />
-        <Route path="/welcome" component={LandingPage} />
-        <Route path="/home" component={HomePage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/signup" component={SignupPage} />
-      </div>
+      <BrowserRouter>
+        <div style={{height: "100vh"}}>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/home" component={HomePage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/signup" component={SignupPage} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
