@@ -8,6 +8,7 @@ module Api::V1
     end
 
     def show
+
       @category = Category.find params[:id]
       @entries = Entry.where(category_id: @category.id)
       @entries = @entries.order(id: :desc).all
@@ -16,7 +17,11 @@ module Api::V1
 
     def create
       category = Category.create(category_params)
+
+
     end
+
+
 
     def new
       category = Category.new
@@ -29,17 +34,19 @@ module Api::V1
       redirect_to '/'
     end
 
+   
+
     private
 
     def category_params
-
       params.require(:category).permit(
+    
         :name,
+        :user_id,
         :board_type,
         :goal,
-        :current_total,
-        :user_id
-      )
+        :current_total
+        )
     end
 
 

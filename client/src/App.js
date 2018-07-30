@@ -19,6 +19,7 @@ library.add(faHome, faCar, faUtensils, faTruck, faGamepad, faMoon);
 
 class App extends Component {
 
+
   constructor(props) {
     super(props);
 
@@ -38,6 +39,7 @@ class App extends Component {
     console.log('componentDidMount <App />');
     this.update()
   }
+
 
   render() {
     return (
