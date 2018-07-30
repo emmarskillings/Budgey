@@ -37,6 +37,8 @@ module Api::V1
         :name,
         :board_type,
         :goal,
+        :current_total,
+        :user_id
       )
     end
 
