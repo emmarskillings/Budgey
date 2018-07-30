@@ -6,10 +6,6 @@ import axios from "axios";
 
 class ExpensePage extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  // }
-
   componentDidMount() {
     const { id } = this.props.match.params
     axios.get(`/api/v1/category/${id}.json`)
