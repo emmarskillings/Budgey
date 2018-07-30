@@ -25,6 +25,7 @@ class CategoryContainer extends Component {
 	    this.setState({
 	      categories: response.data
 	    });
+      console.log(this.state)
 	  })
 	  .catch(error => console.log(error));
 	}
