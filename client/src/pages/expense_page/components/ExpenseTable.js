@@ -30,7 +30,7 @@ class ExpenseTable extends Component {
 
     axios.delete(`/api/v1/category/${category_id}`)
       .then(res => {
-        this.props.update()
+        this.props.updateHome()
       })
   }
 

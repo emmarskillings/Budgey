@@ -37,9 +37,9 @@ class ExpensePage extends Component {
               <button type="button" className="btn btn-primary px-4">
               Add Entry
               </button>} modal closeOnDocumentClick>
-              <NewEntryModal update={this.update.bind(this)} id={this.state.category.id}/>
+              <NewEntryModal update={this.update.bind(this)} id={this.state.category.id} updateHome={this.props.update}/>
             </Popup>
-            <ExpenseTable entries={this.state.entries} id={this.state.category.id} update={this.update.bind(this)}/>
+            <ExpenseTable entries={this.state.entries} id={this.state.category.id} update={this.update.bind(this)} updateHome={this.props.update}/>
           </div>
         }
       </Container>

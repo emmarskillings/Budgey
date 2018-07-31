@@ -21,6 +21,7 @@ class NewEntryModal extends Component {
       axios.post(`/api/v1/entry.json`, { entry })
         .then(res => {
           this.props.update()
+          this.props.updateHome()
         })
 
 
