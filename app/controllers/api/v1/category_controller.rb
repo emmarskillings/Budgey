@@ -29,18 +29,19 @@ module Api::V1
 
     def destroy
       @category = Category.find(params[:id])
-      @category.destroy
+
+      @category.destory
 
       redirect_to '/'
     end
 
-   
+
 
     private
 
     def category_params
       params.require(:category).permit(
-    
+
         :name,
         :user_id,
         :board_type,

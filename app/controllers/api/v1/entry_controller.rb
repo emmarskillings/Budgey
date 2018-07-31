@@ -3,7 +3,7 @@ module Api::V1
   class EntryController < ApplicationController
 
     def create
-      @entry = Entry.new(entry_params)
+      @entry = Entry.create(entry_params)
     end
 
     def destroy
@@ -21,7 +21,7 @@ module Api::V1
 
       params.require(:entry).permit(
         :category_id,
-        :amout,
+        :amount,
         :name,
         :description,
         :date,
