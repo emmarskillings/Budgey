@@ -10,7 +10,7 @@ import Popup from "reactjs-popup";
 
 class ExpensePage extends Component {
 
-  componentDidMount() {
+    update (){
     const { id } = this.props.match.params
     axios.get(`/api/v1/category/${id}.json`)
          .then(response => {
@@ -25,6 +25,12 @@ class ExpensePage extends Component {
          .catch(error => console.log(error))
 
   }
+  
+
+  componentDidMount() {
+    this.update()
+
+}
 
 
   render() {
@@ -51,7 +57,7 @@ class ExpensePage extends Component {
               modal
               closeOnDocumentClick
             >
-            <NewIncomeEntry state_category={this.state.category} state_entry={this.state.entry}/>
+            <NewIncomeEntry update={this.update.bind(this)} state_category={this.state.category} state_entry={this.state.entry}/>
 
             </Popup>
 
