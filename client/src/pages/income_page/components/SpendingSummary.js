@@ -6,7 +6,6 @@ import {Doughnut} from 'react-chartjs-2';
 class SpendingSummary extends Component {
 
   render() {
-  	console.log(this.props.entries, 'inside spendingsummary')
 
 
   	const generate_color = () => {
@@ -78,7 +77,7 @@ class SpendingSummary extends Component {
       <div className="spending-summary mx-auto border border-dark col-md-12">
         <div className="text-center">
 
-        <Doughnut data={data} options={options} width = {600} height = {250}/>
+        <Doughnut data={data} options={options} width = {1600} height = {250}/>
 
 
         </div>
