@@ -3,12 +3,15 @@ import { Container } from "reactstrap";
 import SpendingSummary from "./components/SpendingSummary";
 import ExpenseTable from "./components/ExpenseTable";
 import axios from "axios";
+import NewEntryModal from "./components/NewEntryModal";
+import Popup from "reactjs-popup";
 
 class ExpensePage extends Component {
 
   componentDidMount() {
     const { id } = this.props.match.params
-    axios.get(`/api/v1/category/${id}.json`)
+    console.log(id)
+    axios.get(`http://localhost:300/api/v1/category/${id}.json`)
          .then(response => {
            this.setState({
              category: response.data[0],
@@ -23,6 +26,12 @@ class ExpensePage extends Component {
   render() {
     return (
       <Container>
+        <Popup trigger={
+          <button type="button" className="btn btn-lg category-btn">
+              Add Category
+          </button>} modal closeOnDocumentClick>
+          <NewEntryModal update={this.props.update}/>
+        </Popup>
         { this.state && this.state.entries &&
           <div>
             <SpendingSummary entries={this.state.entries}/>
