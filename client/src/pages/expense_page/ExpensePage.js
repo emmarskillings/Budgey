@@ -35,7 +35,7 @@ class ExpensePage extends Component {
         { this.state && this.state.entries &&
           <div>
             <SpendingSummary entries={this.state.entries}/>
-            <ExpenseTable entries={this.state.entries} />
+            <ExpenseTable entries={this.state.entries} id={this.props.match.params} />
           </div>
         }
       </Container>
