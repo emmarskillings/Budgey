@@ -14,10 +14,17 @@ class Navbar extends Component {
 
   render() {
     var user = localStorage.getItem('jwtToken')
+    var button
     if (user) {
-      var button = <NavLink to='/'><div className="navbar-right-div logout" onClick={this.logout}>Logout</div></NavLink>
+      button =
+      <NavLink to='/'>
+        <div className="navbar-right-div logout" onClick={this.logout}>Logout</div>
+      </NavLink>
     } else {
-      button = <NavLink to='/login'><div className="navbar-right-div login" onClick={this.login}>Login</div></NavLink>
+      button =
+      <NavLink to='/login'>
+        <div className="navbar-right-div login" onClick={this.login}>Login</div>
+      </NavLink>
     }
     return (
       <nav className="navbar justify-content-between mb-4">
