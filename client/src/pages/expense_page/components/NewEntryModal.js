@@ -23,7 +23,6 @@ class NewEntryModal extends Component {
           this.props.update()
         })
 
-      console.log("HIHI")
 
     }
 

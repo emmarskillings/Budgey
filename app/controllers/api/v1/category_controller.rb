@@ -4,6 +4,7 @@ module Api::V1
 
     def index
       @categories = Category.all
+      @categories = @categories.order(:id :desc).all
       render json: @categories
     end
 
@@ -30,9 +31,7 @@ module Api::V1
     def destroy
       @category = Category.find(params[:id])
 
-      @category.destory
-
-      redirect_to '/'
+      @category.destroy
     end
 
 
