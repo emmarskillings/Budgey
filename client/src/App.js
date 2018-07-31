@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./global_components/Navbar";
 import HomePage from "./pages/home_page/HomePage";
 import ExpensePage from "./pages/expense_page/ExpensePage";
+import IncomePage from "./pages/income_page/IncomePage";
 import axios from "axios";
 import { Route, Switch } from 'react-router-dom';
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -60,6 +61,16 @@ class App extends Component {
 
               />
             </Switch>
+
+            <Switch>
+              <Route path='/income/:id' render={props => (
+                <IncomePage categories={this.state.categories} update={this.update.bind(this)} {...props}/>
+                )}
+
+              />
+            </Switch>
+
+
           </div>
         }
       </div>
