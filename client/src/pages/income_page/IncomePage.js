@@ -10,10 +10,12 @@ class ExpensePage extends Component {
     const { id } = this.props.match.params
     axios.get(`/api/v1/category/${id}.json`)
          .then(response => {
+          
            this.setState({
              category: response.data[0],
              entries: response.data[1]
            });
+   
           })
          .catch(error => console.log(error))
 
@@ -21,6 +23,11 @@ class ExpensePage extends Component {
 
 
   render() {
+
+
+   
+
+
     return (
       <Container>
         { this.state && this.state.entries &&
