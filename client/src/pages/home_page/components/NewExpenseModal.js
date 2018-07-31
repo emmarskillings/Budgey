@@ -8,13 +8,12 @@ class NewExpenseModal extends Component {
 
   submitNewCategory = event => {
       event.preventDefault();
-
-      const category = {
-        name: event.target.categoryName.value,
-        board_type: 'expense',
-        goal: event.target.maxGoal.value,
-        current_total: 0,
-        user_id: 1,
+        const category = {
+          name: event.target.categoryName.value,
+          board_type: 'expense',
+          goal: event.target.maxGoal.value,
+          current_total: 0,
+          user_id: 1,
       };
 
       axios.post(`/api/v1/category.json`, { category })

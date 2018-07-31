@@ -8,34 +8,38 @@ import Popup from "reactjs-popup";
 
 class ExpensePage extends Component {
 
-  componentDidMount() {
-    const { id } = this.props.match.params
-    console.log(id)
-    axios.get(`http://localhost:300/api/v1/category/${id}.json`)
+  update() {
+    axios.get(`http://localhost:3002/api/v1/category/${this.props.match.params['id']}.json`)
          .then(response => {
            this.setState({
              category: response.data[0],
              entries: response.data[1]
            });
           })
-         .catch(error => console.log(error))
+         .catch(error => console.log(error));
 
   }
 
+  componentDidMount() {
+    this.update()
+
+  }
 
   render() {
     return (
       <Container>
-        <Popup trigger={
-          <button type="button" className="btn btn-lg category-btn">
-              Add Category
-          </button>} modal closeOnDocumentClick>
-          <NewEntryModal update={this.props.update}/>
-        </Popup>
         { this.state && this.state.entries &&
           <div>
+            <h1>Expenses - {this.state.category.name}</h1>
             <SpendingSummary entries={this.state.entries}/>
-            <ExpenseTable entries={this.state.entries} id={this.props.match.params} />
+            <br/>
+            <Popup trigger={
+              <button type="button" className="btn btn-primary px-4">
+              Add Entry
+              </button>} modal closeOnDocumentClick>
+              <NewEntryModal update={this.update.bind(this)} id={this.state.category.id}/>
+            </Popup>
+            <ExpenseTable entries={this.state.entries} id={this.state.category.id} update={this.update.bind(this)}/>
           </div>
         }
       </Container>
