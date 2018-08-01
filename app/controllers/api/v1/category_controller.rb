@@ -22,7 +22,11 @@ module Api::V1
       category = Category.create(category_params)
     end
 
-
+    def update
+      @category = Category.find(params['id'])
+      @category.update_attributes(category_params)
+      
+    end
 
     def new
       category = Category.new

@@ -83,9 +83,7 @@ getIncomeCategory = () => {
           </NavLink>
           )
         })}
-
-
-          
+   
           
         <Popup
           trigger={

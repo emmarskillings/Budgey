@@ -2,6 +2,7 @@ module Api::V1
 
   class EntryController < ApplicationController
 
+<<<<<<< HEAD
     skip_before_action :authenticate
 
     def create
@@ -10,6 +11,17 @@ module Api::V1
       @entries = Entry.where(category_id: @category.id)
       newTotal = @entry.amount + @category.current_total;
       @category.update(current_total: newTotal)
+=======
+
+    def index
+      @entry = Category.all
+      render json: @entry
+    end
+
+    def create
+      @entry = Entry.new(entry_params)
+      @entry.save
+>>>>>>> income_pages_features
     end
 
     def destroy
