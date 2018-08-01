@@ -11,14 +11,14 @@ class ExpenseTable extends Component {
     const allRows = entries.map(entry => {
       count += 1;
       return(
-        <tr id='e' className='entryRow'>
+        <tr className='entryRow'>
           <th scope="row">{count}</th>
           <td>{entry.name}</td>
           <td>{entry.date}</td>
           <td>$ {entry.amount}</td>
           <td>{entry.description}</td>
           <td>
-            <button type="button" className="btn btn-primary delete-btn entryDelete" onClick={() => this.deleteEntry(entry.id)}><FontAwesomeIcon icon="home" /></button>
+            <button type="button" className="btn btn-primary delete-btn entryDelete" onClick={() => this.deleteEntry(entry.id)}><FontAwesomeIcon icon="trash"/></button>
           </td>
         </tr>
       );
@@ -64,6 +64,7 @@ class ExpenseTable extends Component {
                 <th scope="col">Date</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Description</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
