@@ -14,14 +14,19 @@ class Navbar extends Component {
 
   render() {
     var user = localStorage.getItem('jwtToken')
-    var button
+    var button1
+    var button2
     if (user) {
-      button =
+      button1 =
       <NavLink to='/'>
         <div className="navbar-right-div logout" onClick={this.logout}>Logout</div>
       </NavLink>
+      button2 =
+      <NavLink to='/home'>
+        <div className="navbar-right-div">Message Centre</div>
+      </NavLink>
     } else {
-      button =
+      button1 =
       <NavLink to='/login'>
         <div className="navbar-right-div login" onClick={this.login}>Login</div>
       </NavLink>
@@ -32,10 +37,8 @@ class Navbar extends Component {
           <div className="navbar-brand">Budgey</div>
         </NavLink>
         <div className="navbar justify-content-between">
-          <NavLink to='/home'>
-            <div className="navbar-right-div">Message Centre</div>
-          </NavLink>
-          {button}
+          {button2}
+          {button1}
         </div>
       </nav>
     )
