@@ -18,8 +18,9 @@ import {
   faGamepad,
   faMoon
 } from "@fortawesome/free-solid-svg-icons";
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faHome, faCar, faUtensils, faTruck, faGamepad, faMoon);
+library.add(faHome, faCar, faUtensils, faTruck, faGamepad, faMoon, fab);
 
 
 class App extends Component {

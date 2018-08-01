@@ -1,12 +1,6 @@
-'use strict';
-
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import FacebookLogin from 'react-facebook-login';
 import { Redirect } from 'react-router-dom';
-
-
-
 
 class LoginWithFacebook extends Component {
 
@@ -18,14 +12,14 @@ class LoginWithFacebook extends Component {
   }
 
   redirect = (event) => {
-    var user = JSON.parse(localStorage.getItem('user'));
+    var user = JSON.parse(localStorage.getItem('fbUser'));
     var token = user.accessToken
     localStorage.setItem('fbToken', token);
     this.setState({ redirect: true })
   }
 
   responseFacebook = (res) => {
-    localStorage.setItem('user', JSON.stringify(res));
+    localStorage.setItem('fbUser', JSON.stringify(res));
   }
 
   render() {
@@ -33,15 +27,17 @@ class LoginWithFacebook extends Component {
       return <Redirect to='/home' />
     }
     return(
-      <FacebookLogin
-        appId="1058917207602672"
-        autoLoad={true}
-        fields="name,email,picture"
-        callback={this.responseFacebook}
-        cssClass="my-facebook-button-class"
-        onClick={this.redirect}
-        icon="fa-facebook"
-      />
+      <div className="social-button">
+        <FacebookLogin
+          appId="1058917207602672"
+          autoLoad={true}
+          fields="name,email,picture"
+          callback={this.responseFacebook}
+          cssClass="my-facebook-button-class"
+          onClick={this.redirect}
+          icon="fa-facebook"
+        />
+      </div>
     );
   }
 }
