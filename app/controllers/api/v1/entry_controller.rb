@@ -5,17 +5,12 @@ module Api::V1
 
     skip_before_action :authenticate
 
-    def create
- 
-      @category = Category.find(@entry.category_id)
-      @entries = Entry.where(category_id: @category.id)
-      newTotal = @entry.amount + @category.current_total;
-      @category.update(current_total: newTotal)
 
     def index
       @entry = Category.all
       render json: @entry
     end
+
 
     def create
       @entry = Entry.new(entry_params)
@@ -24,6 +19,9 @@ module Api::V1
       updateCategoryTotal(@entry.amount, @entry.category_id)
 
     end
+
+    
+
 
     def destroy
       @entry = Entry.find(params[:id])
