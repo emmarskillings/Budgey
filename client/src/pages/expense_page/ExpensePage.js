@@ -35,7 +35,7 @@ class ExpensePage extends Component {
         { this.state && this.state.entries &&
           <div>
             <h1>Expenses - {this.state.category.name}</h1>
-            <SpendingSummary entries={this.state.entries}/>
+            <SpendingSummary category={this.state.category}/>
             <br/>
             <Popup trigger={
               <button type="button" className="btn btn-primary px-4">

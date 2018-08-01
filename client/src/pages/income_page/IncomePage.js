@@ -29,7 +29,7 @@ class ExpensePage extends Component {
 
   var new_total = this.state.category.current_total + parseFloat(to_add);
 
-  console.log(new_total, 'this the new total ya')
+  
 
 
 
@@ -71,7 +71,7 @@ class ExpensePage extends Component {
       <Container>
         { this.state && this.state.entries &&
           <div>
-            <SpendingSummary entries={this.state.entries}/>
+            <SpendingSummary category={this.state.category}/>
             <ExpenseTable entries={this.state.entries} />
 
 
@@ -87,12 +87,6 @@ class ExpensePage extends Component {
             <NewIncomeEntry updateDB={this.updateDatabase.bind(this)} update={this.update.bind(this)} state_category={this.state.category} state_entry={this.state.entry}/>
 
             </Popup>
-
-
-
-
-
-
 
 
           </div>
