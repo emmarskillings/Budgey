@@ -23,9 +23,8 @@ const makeCardStack = (cards) => {
                       </div>
                     </div>
                   </NavLink>
-                </div>
-              </div>
-          );
+
+          )
     }
 
   })
@@ -37,7 +36,7 @@ class ExpenseBoard extends Component {
     const { component: Component, ...props } = this.props
     return (<div className="expense-board py-4 text-center">
               <h4 className="py-3">Expense Boards</h4>
-              <div className="card-deck">
+              <div>
                 {makeCardStack(props.categories)}
               </div>
               <Popup trigger={
