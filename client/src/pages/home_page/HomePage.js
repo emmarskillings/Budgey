@@ -13,7 +13,7 @@ class HomePage extends Component {
 
   const { component: Component, ...props } = this.props
 
-    if (!localStorage.getItem('jwtToken')) {
+    if (!localStorage.getItem('jwtToken') && !localStorage.getItem('fbToken') && !localStorage.getItem('googleToken')) {
       return <Redirect to='/login' />
     }
 

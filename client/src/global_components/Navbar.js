@@ -10,35 +10,46 @@ class Navbar extends Component {
 
   logout = (event) => {
     localStorage.removeItem('jwtToken')
+    localStorage.removeItem('fbToken')
+    localStorage.removeItem('googleToken')
   }
 
   render() {
     var user = localStorage.getItem('jwtToken')
-    var button1
-    var button2
-    if (user) {
-      button1 =
+    var fbUser = localStorage.getItem('fbToken')
+    var googleUser = localStorage.getItem('googleToken')
+    var loginLogout
+    var messageCentre
+    var navbarBrand
+    if (user || fbUser || googleUser) {
+      loginLogout =
       <NavLink to='/'>
         <div className="navbar-right-div logout" onClick={this.logout}>Logout</div>
       </NavLink>
-      button2 =
+      messageCentre =
       <NavLink to='/home'>
         <div className="navbar-right-div">Message Centre</div>
       </NavLink>
+      navbarBrand =
+      <NavLink to='/home'>
+        <div className="navbar-brand">Budgey</div>
+      </NavLink>
     } else {
-      button1 =
+      loginLogout =
       <NavLink to='/login'>
         <div className="navbar-right-div login" onClick={this.login}>Login</div>
+      </NavLink>
+      navbarBrand =
+      <NavLink to='/'>
+        <div className="navbar-brand">Budgey</div>
       </NavLink>
     }
     return (
       <nav className="navbar justify-content-between mb-4">
-        <NavLink to='/home'>
-          <div className="navbar-brand">Budgey</div>
-        </NavLink>
+          {navbarBrand}
         <div className="navbar justify-content-between">
-          {button2}
-          {button1}
+          {messageCentre}
+          {loginLogout}
         </div>
       </nav>
     )
