@@ -23,7 +23,6 @@ class ExpensePage extends Component {
 
   componentDidMount() {
     this.update()
-
   }
 
   render() {
