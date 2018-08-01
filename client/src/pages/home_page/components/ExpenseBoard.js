@@ -18,13 +18,14 @@ const makeCardStack = (cards) => {
                       <div className="card-body">
                         <FontAwesomeIcon icon="home" className="icons pb-2" />
                         <h5 className="card-title">{card['name']}</h5>
-                        <h6 className="card-subtitle mb-2 text-muted">${card['goal']}</h6>
+                        <h6 className="card-subtitle mb-2 text-muted">${card['current_total']}</h6>
                         <BarGraphs data_needed={card}/>
                       </div>
                     </div>
                   </NavLink>
-
-          )
+                </div>
+              </div>
+          );
     }
 
   })
@@ -36,7 +37,7 @@ class ExpenseBoard extends Component {
     const { component: Component, ...props } = this.props
     return (<div className="expense-board py-4 text-center">
               <h4 className="py-3">Expense Boards</h4>
-              <div>
+              <div className="card-deck">
                 {makeCardStack(props.categories)}
               </div>
               <Popup trigger={
