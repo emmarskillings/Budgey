@@ -12,7 +12,7 @@ class ExpensePage extends Component {
 
     update (){
     const { id } = this.props.match.params
-    axios.get(`/api/v1/category/${id}.json`)
+    axios.get(`/api/v1/category/${id}`)
          .then(response => {
           
            this.setState({
@@ -25,10 +25,35 @@ class ExpensePage extends Component {
          .catch(error => console.log(error))
 
   }
+
+  updateDatabase(to_add){
+
+  console.log(to_add, 'we got here')
+  console.log(this.state.category.current_total, typeof this.state.category.current_total , this.state.user_id, 'we got here twice')
+
+
+  const { id } = this.props.match.params
+  axios.put(`http://localhost:3002/api/v1/category/${id}`, {
+     current_total: this.state.category.current_total + to_add,
+     name: this.state.category.name,
+     user_id: this.state.category.user_id,
+     board_type: this.state.category.board_type,
+     goal: this.state.category.goal})  
+    .then(response => {
+
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+  }
+
+
   
 
   componentDidMount() {
-    this.update()
+    this.update();
+    
 
 }
 
@@ -57,7 +82,7 @@ class ExpensePage extends Component {
               modal
               closeOnDocumentClick
             >
-            <NewIncomeEntry update={this.update.bind(this)} state_category={this.state.category} state_entry={this.state.entry}/>
+            <NewIncomeEntry updateDB={this.updateDatabase.bind(this)} update={this.update.bind(this)} state_category={this.state.category} state_entry={this.state.entry}/>
 
             </Popup>
 

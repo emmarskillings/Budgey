@@ -26,8 +26,12 @@ handleClick(){
     )
     .then(response => {
      this.props.update()
+     this.props.updateDB(amount)
+
     })
     .catch(error => console.log(error))
+
+
   
 
 }
