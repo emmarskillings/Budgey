@@ -44,12 +44,12 @@ class NewExpenseModal extends Component {
             />
           </div>
         </div>
-        <div class="form-group row px-4">
-          <label for="category-icon" className="col-sm-3 col-form-label">
+        <div className="form-group row px-4">
+          <label htmlFor="category-icon" className="col-sm-3 col-form-label">
             Select icon:
           </label>
           <div className="col-sm-9">
-            <select class="form-control" id="category-icon">
+            <select className="form-control" id="category-icon">
               <option>Map</option>
               <option>Garbage Bin</option>
               <option>Train</option>

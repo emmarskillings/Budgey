@@ -1,35 +1,50 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./ExpenseTable.css";
-
-
-
-const makeEntryRow = (entries) => {
-  let count = 0;
-  const allRows = entries.map(entry => {
-    count += 1;
-    return(
-      <tr>
-        <th scope="row">{count}</th>
-        <td>{entry.name}</td>
-        <td>{entry.date}</td>
-        <td>$ {entry.amount}</td>
-        <td>{entry.description}</td>
-      </tr>
-    );
-
-  })
-  return allRows
-}
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class ExpenseTable extends Component {
-  handleClick = event => {
+
+
+    makeEntryRow = (entries) => {
+    let count = 0;
+    const allRows = entries.map(entry => {
+      count += 1;
+      return(
+        <tr id='e' className='entryRow'>
+          <th scope="row">{count}</th>
+          <td>{entry.name}</td>
+          <td>{entry.date}</td>
+          <td>$ {entry.amount}</td>
+          <td>{entry.description}</td>
+          <td>
+            <button type="button" className="btn btn-primary delete-btn entryDelete" onClick={() => this.deleteEntry(entry.id)}><FontAwesomeIcon icon="home" /></button>
+          </td>
+        </tr>
+      );
+
+    })
+    return allRows
+  }
+
+
+  deleteCategory = event => {
     event.preventDefault();
 
     const category_id = this.props.id;
 
     axios.delete(`/api/v1/category/${category_id}`)
       .then(res => {
+        this.props.updateHome()
+      })
+
+  }
+
+  deleteEntry = entry_id => {
+
+    axios.delete(`/api/v1/entry/${entry_id}`)
+      .then(res => {
+        this.props.update()
         this.props.updateHome()
       })
   }
@@ -52,11 +67,11 @@ class ExpenseTable extends Component {
               </tr>
             </thead>
             <tbody>
-            {makeEntryRow(props.entries)}
+            {this.makeEntryRow(props.entries)}
             </tbody>
           </table>
           <br/>
-          <button type="button" className="btn btn-primary delete-btn" onClick={this.handleClick.bind(this)}>Delete Category</button>
+          <button type="button" className="btn btn-primary delete-btn" onClick={this.deleteCategory.bind(this)}>Delete Category</button>
         </div>
       </div>
     );
