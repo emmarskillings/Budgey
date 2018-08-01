@@ -3,9 +3,9 @@ import { Container } from "reactstrap";
 import SpendingSummary from "./components/SpendingSummary";
 import ExpenseTable from "./components/ExpenseTable";
 import axios from "axios";
-import { Redirect } from 'react-router-dom';
 import NewEntryModal from "./components/NewEntryModal";
 import Popup from "reactjs-popup";
+import { Redirect } from 'react-router-dom';
 
 class ExpensePage extends Component {
 
