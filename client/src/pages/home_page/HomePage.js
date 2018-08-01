@@ -3,6 +3,7 @@ import { Container, Row} from "reactstrap";
 import ExpenseBoard from "./components/ExpenseBoard";
 import Summary from "./components/Summary";
 import IncomeBoard from "./components/IncomeBoard";
+import Rundown from "./components/Rundown";
 import { Redirect } from 'react-router-dom';
 
 class HomePage extends Component {
@@ -18,9 +19,18 @@ class HomePage extends Component {
     return (
       <Container>
         <Row>
-          <IncomeBoard />
-          <Summary />
-          <ExpenseBoard categories={props.categories} update={props.update} {...props}/>
+          <div className="col-md-3">
+            <IncomeBoard />
+            <Rundown />
+          </div>
+          <div className="col-md-9">
+            <div>
+              <Summary />
+            </div>
+            <div>
+              <ExpenseBoard categories={props.categories} update={props.update} {...props} />
+            </div>
+          </div>
         </Row>
       </Container>
     );
