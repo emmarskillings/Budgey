@@ -27,7 +27,7 @@ class ExpensePage extends Component {
 
   render() {
 
-    if (!localStorage.getItem('jwtToken')) {
+    if (!localStorage.getItem('jwtToken') && !localStorage.getItem('fbUser') && !localStorage.getItem('googleUser')) {
       return <Redirect to='/login' />
     }
     return (
