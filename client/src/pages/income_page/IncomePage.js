@@ -19,7 +19,6 @@ class ExpensePage extends Component {
              category: response.data[0],
              entries: response.data[1]
            });
-           console.log(this.state, 'yo yo we checking this out')
    
           })
          .catch(error => console.log(error))
@@ -28,13 +27,16 @@ class ExpensePage extends Component {
 
   updateDatabase(to_add){
 
-  console.log(to_add, 'we got here')
-  console.log(this.state.category.current_total, typeof this.state.category.current_total , this.state.user_id, 'we got here twice')
+  var new_total = this.state.category.current_total + parseFloat(to_add);
+
+  console.log(new_total, 'this the new total ya')
+
+
 
 
   const { id } = this.props.match.params
   axios.put(`http://localhost:3002/api/v1/category/${id}`, {
-     current_total: this.state.category.current_total + to_add,
+     current_total: new_total,
      name: this.state.category.name,
      user_id: this.state.category.user_id,
      board_type: this.state.category.board_type,
