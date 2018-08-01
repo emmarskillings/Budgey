@@ -18,16 +18,14 @@ class LoginWithFacebook extends Component {
   }
 
   redirect = (event) => {
-    if (localStorage.getItem('fbToken')) {
-      return this.setState({ redirect: true })
-    }
+    var user = JSON.parse(localStorage.getItem('user'));
+    var token = user.accessToken
+    localStorage.setItem('fbToken', token);
+    this.setState({ redirect: true })
   }
 
   responseFacebook = (res) => {
-    console.log(res);
-    const token = res.accessToken
-    console.log(token)
-    localStorage.setItem('fbToken', token);
+    localStorage.setItem('user', JSON.stringify(res));
   }
 
   render() {
