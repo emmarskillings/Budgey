@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_08_02_161030) do
     t.string "board_type"
     t.integer "goal"
     t.integer "current_total"
+    t.boolean "flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

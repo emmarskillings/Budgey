@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./BarGraphs.css";
 import { Progress } from "reactstrap";
+import axios from 'axios';
 
 
 class BarGraphs extends Component {
@@ -10,6 +11,11 @@ class BarGraphs extends Component {
     let barColor = 'success'
     if (percentage > 100){
       barColor = 'danger'
+      axios.put(`/api/v1/category/${card.id}`, {
+        flag: true
+      }).then((res) => {
+        console.log(res)
+      })
     }
 
     return (

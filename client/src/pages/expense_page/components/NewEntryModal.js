@@ -26,7 +26,6 @@ class NewEntryModal extends Component {
 
     }
 
-
   render() {
     const { component: Component, ...props } = this.props
     return (

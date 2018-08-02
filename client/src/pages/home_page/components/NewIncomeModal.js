@@ -14,6 +14,7 @@ handleClick = event => {
       goal: 0,
       current_total: 0,
       user_id: 1,
+      flag: false
   };
 
   axios.post('http://localhost:3002/api/v1/category.json', { category })

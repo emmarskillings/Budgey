@@ -23,35 +23,34 @@ CoolCatTeenX.categories.create!({
 	board_type: 'expense',
 	goal: 100,
 	current_total: 50,
-
+	flag: false
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Transportation',
 	board_type: 'expense',
 	goal: 60,
-	current_total: 20
-
+	current_total: 20,
+	flag: false
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Hobbies',
 	board_type: 'expense',
 	goal: 250,
-	current_total: 40
+	current_total: 40,
+	flag: false
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Allowance',
 	board_type: 'income',
-	goal: 0,
 	current_total: 50
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Babysit',
 	board_type: 'income',
-	goal: 10000,
 	current_total: 200
 })
 
@@ -61,7 +60,6 @@ entry1 = Entry.create!({
 	description: 'Bought binders for 3 classes',
 	amount: 50,
 	date: "10/12/2017"
-
 	})
 
 entry2 = Entry.create!({

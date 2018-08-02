@@ -11,7 +11,6 @@ module Api::V1
     end
 
     def show
-
       @category = Category.find params[:id]
       @entries = Entry.where(category_id: @category.id)
       @entries = @entries.order(id: :desc).all
@@ -20,6 +19,12 @@ module Api::V1
 
     def create
       category = Category.create(category_params)
+    end
+
+    def update
+      @category = Category.find params[:id]
+      @category.update(flag_params)
+      render json: @category
     end
 
 
@@ -36,6 +41,12 @@ module Api::V1
 
 
     private
+
+    def flag_params
+      params.require(:category).permit(
+        :flag
+      )
+    end
 
     def category_params
       params.require(:category).permit(
