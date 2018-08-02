@@ -28,7 +28,7 @@ class Navbar extends Component {
         <div className="navbar-right-div logout" onClick={this.logout}>Logout</div>
       </NavLink>
       messageCentre =
-      <NavLink to='/home'>
+      <NavLink to='/messages'>
         <div className="navbar-right-div">Message Centre</div>
       </NavLink>
       navbarBrand =

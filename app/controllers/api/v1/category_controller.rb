@@ -3,7 +3,7 @@ module Api::V1
   class CategoryController < ApplicationController
 
     skip_before_action :authenticate
-    
+
     def index
       @categories = Category.all
       @categories = @categories.order(id: :desc).all
@@ -22,7 +22,7 @@ module Api::V1
       category = Category.create(category_params)
     end
 
-   
+
 
     def new
       category = Category.new
@@ -33,7 +33,6 @@ module Api::V1
 
       @category.destroy
     end
-
 
 
     private

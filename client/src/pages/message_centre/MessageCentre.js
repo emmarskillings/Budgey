@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
-import SignupForm from './components/SignupForm'
+import Messages from './components/Messages'
 
-class SignupPage extends Component {
+class MessageCentre extends Component {
 
   render () {
     return (
       <Container className="signup-body">
-        <SignupForm />
+        <Messages />
       </Container>
     )
   }
 }
 
-export default SignupPage;
+export default MessageCentre;

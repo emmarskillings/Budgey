@@ -59,7 +59,7 @@ class ExpenseTable extends Component {
       })
   }
 
-
+ 
   render() {
     const { component: Component, ...props } = this.props
     if (this.state.deleted){
@@ -93,5 +93,3 @@ class ExpenseTable extends Component {
 }
 
 export default ExpenseTable;
-
-

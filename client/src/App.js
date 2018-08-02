@@ -7,6 +7,7 @@ import LoginPage from './pages/login_page/LoginPage';
 import HomePage from "./pages/home_page/HomePage";
 import ExpensePage from "./pages/expense_page/ExpensePage";
 import IncomePage from "./pages/income_page/IncomePage";
+import MessageCentre from './pages/message_centre/MessageCentre'
 import axios from "axios";
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -61,6 +62,7 @@ class App extends Component {
                 <Route exact path='/' component={LandingPage} />
                 <Route path='/signup' component={SignupPage} />
                 <Route path='/login' component={LoginPage} />
+                <Route path='/messages' component={MessageCentre} />
                 <Route path='/home' render={props => (
                   <HomePage categories={this.state.categories} update={this.update.bind(this)} {...props}/>
                   )}
