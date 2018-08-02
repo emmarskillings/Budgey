@@ -30,9 +30,10 @@ class LoginForm extends Component {
     axios.post(`/api/v1/sessions`, { ...this.state.credentials })
       .then(res => {
         const token = res.data.jwt;
+        const id = res.data.id;
         localStorage.setItem('jwtToken', token);
+        localStorage.setItem('currUser_id', id);
         this.setState({ redirect: true, error: false })
-        console.log(res)
       })
       .catch((error) => {
         this.setState({ error: true })
@@ -47,7 +48,7 @@ class LoginForm extends Component {
         <div className='error-message'>
           Incorrect Credentials. Please try again.
         </div>
-    } 
+    }
     return (
       <section className="login-existing-user">
         <header className="login-page-header">

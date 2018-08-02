@@ -12,7 +12,7 @@ module Api::V1
       if user
         if user.authenticate(params[:password])
           jwt = Auth.issue({user: user.id})
-          render json: {jwt: jwt}
+          render json: {jwt: jwt, id: user.id}
         else
           render json: {error: "unauthorized"}, status: 401
         end
