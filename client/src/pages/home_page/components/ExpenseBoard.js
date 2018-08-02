@@ -5,7 +5,7 @@ import NewExpenseModal from "./NewExpenseModal";
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";
 import BarGraphs from "./BarGraphs.js";
-import NewExpenseEntry from "./NewExpenseEntry.js";
+import NewEntryModal from "../../expense_page/components/NewEntryModal";
 
 const makeCardStack = (cards, update) => {
   const allCards = cards.map(card => {
@@ -28,20 +28,15 @@ const makeCardStack = (cards, update) => {
                   <BarGraphs card={card} />
                 </div>
                 <div className="col-md-2 my-auto">
-                  <Popup
-                    trigger={
-                      <button
-                        type="button"
-                        className="btn btn-outline-danger quick-entry-btn"
-                      >
-                        Add Entry
-                      </button>
-                    }
-                    modal
-                    closeOnDocumentClick
-                  >
-                    <NewExpenseEntry category={card} update={update} />
-                  </Popup>
+                <Popup trigger={
+                    <button id="this-button" type="button" className="btn btn-lg category-btn">
+                      + Entry
+                    </button>
+                  } modal closeOnDocumentClick>
+                  {close => (
+                    <NewEntryModal id={card.id} update={update} close ={close.bind(this)}/>
+                  )}
+                </Popup>
                 </div>
               </div>
             </div>
@@ -65,11 +60,10 @@ class ExpenseBoard extends Component {
             <button type="button" className="btn btn-outline-danger category-btn">
               Add Category
             </button>
-          }
-          modal
-          closeOnDocumentClick
-        >
-          <NewExpenseModal update={props.update} />
+          } modal closeOnDocumentClick>
+          {close => (
+            <NewExpenseModal update={props.update} close ={close.bind(this)}/>
+          )}
         </Popup>
       </div>
     );
