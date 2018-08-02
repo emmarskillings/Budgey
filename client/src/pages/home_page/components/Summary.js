@@ -44,6 +44,7 @@ class CategoryContainer extends Component {
 		  })
 		  .catch(error => console.log(error));
 	}
+
   render() {
 
 
@@ -58,63 +59,41 @@ class CategoryContainer extends Component {
 
     }
 
-  	var dataPoint = [];
-    var labels = [];
-    var colors = [];
-    var dataPoint2 = [];
-    var labels2 = [];
-    var colors2 = [];
-  	var name = this.state.categories;
+  	const dataPoint = [];
+    const labels = [];
+    const colors = [];
 
-  	name.forEach(function(element){
-      if (element.board_type === 'expense'){
-
-	  		var to_add = element.current_total
-	      var to_add2 = element.name
-	      var to_add3 = generate_color()
-
-	  		dataPoint.push(to_add);
-	      labels.push(to_add2);
-	      colors.push(to_add3);
+  	this.state.categories.forEach(function(category){
+      if (category.board_type === 'expense'){
+	  		dataPoint.push(category.current_total);
+	      labels.push(category.name);
+	      colors.push(generate_color());
       }
+		});
 
-      else {
-	      var to_add = element.current_total
-	      var to_add2 = element.name
-	      var to_add3 = generate_color()
-
-	      dataPoint2.push(to_add);
-	      labels2.push(to_add2);
-	      colors2.push(to_add3);
-
-      }
-
-
-  	});
-
-  	var options = {
+    const options = {
       responsive: true,
   	  legend: {
   	  	"display": true,
   	  	"position":"right",
   	  },
-  	},
-    data= {
+  	}
+
+    const data = {
             labels: labels,
             datasets: [{
-	            label: "My First dataset",
 	            backgroundColor: colors,
 	            data: dataPoint,
             }]
         }
 
-  return(
-  	<div style={{'padding-right':200}}>
-	    <h4 align='left'>Spending Summary</h4>
-	  	<Doughnut data={data} options={options} height={100}/>
-			<br/>
-  	</div>
-  	)
+	  return(
+	  	<div style={{'padding-right':200}}>
+		    <h4 align='left'>Spending Summary</h4>
+		  	<Doughnut data={data} options={options} height={100}/>
+				<br/>
+	  	</div>
+	  	)
 
 	}
 }
