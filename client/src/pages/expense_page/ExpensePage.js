@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import SpendingSummary from "./components/SpendingSummary";
+import BarGraphs from "../home_page/components/BarGraphs";
 import ExpenseTable from "./components/ExpenseTable";
 import axios from "axios";
 import NewEntryModal from "./components/NewEntryModal";
@@ -35,41 +35,25 @@ class ExpensePage extends Component {
     }
     return (
       <Container>
-        {this.state &&
-          this.state.entries && (
-            <div>
-              <br />
-              <h1 align="center">{this.state.category.name}</h1>
-              <h4 align="center">budgeted: ${this.state.category.goal}</h4>
-              <br />
-              <SpendingSummary category={this.state.category} />
-              <br />
-              <Popup
-                trigger={
-                  <button type="button" className="btn btn-primary px-4">
-                    Add Entry
-                  </button>
-                }
-                modal
-                closeOnDocumentClick
-              >
-                {close => (
-                  <NewEntryModal
-                    update={this.update.bind(this)}
-                    id={this.state.category.id}
-                    updateHome={this.props.update}
-                    close={close.bind(this)}
-                  />
-                )}
-              </Popup>
-              <ExpenseTable
-                entries={this.state.entries}
-                id={this.state.category.id}
-                update={this.update.bind(this)}
-                updateHome={this.props.update}
-              />
-            </div>
-          )}
+        { this.state && this.state.entries &&
+          <div>
+            <br/>
+            <h1 align='center'>{this.state.category.name}</h1>
+            <h4 align='center'>budgeted: ${this.state.category.goal}</h4>
+            <br/>
+            <BarGraphs card={this.state.category}/>
+            <br/>
+            <Popup trigger={
+              <button type="button" className="btn btn-primary px-4">
+              Add Entry
+              </button>} modal closeOnDocumentClick>
+              {close => (
+                <NewEntryModal update={this.update.bind(this)} id={this.state.category.id} updateHome={this.props.update} close={close.bind(this)}/>
+              )}
+            </Popup>
+            <ExpenseTable entries={this.state.entries} id={this.state.category.id} update={this.update.bind(this)} updateHome={this.props.update}/>
+          </div>
+        }
       </Container>
     );
   }

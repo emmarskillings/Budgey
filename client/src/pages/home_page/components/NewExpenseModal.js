@@ -5,20 +5,23 @@ import { Redirect } from "react-router-dom";
 
 class NewExpenseModal extends Component {
   submitNewCategory = event => {
-    event.preventDefault();
-    const category = {
-      name: event.target.categoryName.value,
-      board_type: "expense",
-      goal: event.target.maxGoal.value,
-      current_total: 0,
-      user_id: 1
-    };
+      event.preventDefault();
+        const category = {
+          name: event.target.categoryName.value,
+          board_type: 'expense',
+          goal: event.target.maxGoal.value,
+          current_total: 0,
+          user_id: localStorage.getItem('currUser_id'),
+      };
 
-    axios.post(`/api/v1/category.json`, { category }).then(res => {
-      this.props.update();
-      this.props.close();
-    });
-  };
+      axios.post(`/api/v1/category.json`, { category })
+        .then(res => {
+          this.props.update()
+          this.props.close()
+        })
+
+    }
+
 
   render() {
     const { component: Component, ...props } = this.props;

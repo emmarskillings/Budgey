@@ -38,21 +38,20 @@ class App extends Component {
   }
 
   update() {
-    axios
-      .get("http://localhost:3002/api/v1/category.json")
-      .then(response => {
-        this.setState({
-          categories: response.data
-        });
-        console.log(response.data);
-      })
-      .catch(error => console.log(error));
+    axios.get("http://localhost:3002/api/v1/category.json")
+         .then(response => {
+           this.setState({
+             categories: response.data
+           });
+          })
+         .catch(error => console.log(error));
   }
 
   componentDidMount() {
     console.log("componentDidMount <App />");
     this.update();
   }
+
 
   render() {
     return (
