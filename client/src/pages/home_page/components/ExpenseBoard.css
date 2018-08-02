@@ -1,5 +1,7 @@
 .expense-board {
   background-color: #fdb44b;
+  max-height: 38em;
+  overflow-y: scroll;
 }
 .expense-board h4 {
   font-weight: 600;

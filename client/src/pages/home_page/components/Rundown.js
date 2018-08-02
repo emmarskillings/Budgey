@@ -22,7 +22,7 @@ class Rundown extends Component {
     }
 
     return (
-          <div className="text-center">
+          <div className="rundown text-center">
               <br/>
               <h5>Income: $ {total_income}</h5>
               <h5>Expenses: $ {total_expenses}</h5>
