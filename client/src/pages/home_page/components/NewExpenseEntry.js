@@ -18,7 +18,7 @@ class NewExpenseEntry extends Component {
 
       console.log(entry)
 
-      axios.post(`/api/v1/entry.json`, { entry })
+      axios.post(`http://localhost:3002/api/v1/entry.json`, { entry })
         .then(res => {
           this.props.update()
         })
