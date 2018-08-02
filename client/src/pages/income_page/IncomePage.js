@@ -23,6 +23,7 @@ class IncomePage extends Component {
 
   }
 
+
   componentDidMount() {
     this.update();
 
@@ -40,7 +41,7 @@ class IncomePage extends Component {
         { this.state && this.state.entries &&
           <div>
             <h1>Income Source - {this.state.category.name}</h1>
-            <SpendingSummary entries={this.state.entries}/>
+            <SpendingSummary category={this.state.category} entries={this.state.entries}/>
             <br/>
             <Popup trigger={
                 <button type="button" className="btn btn-primary px-4">
@@ -52,6 +53,7 @@ class IncomePage extends Component {
             <IncomeTable entries={this.state.entries}
             id={this.state.category.id}
             update={this.update.bind(this)} updateHome={this.props.update} />
+
           </div>
         }
 
