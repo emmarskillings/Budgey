@@ -6,7 +6,6 @@ module Api::V1
 
     def create
       user = User.new(user_params)
-      puts user.inspect
       if user.save
         render json: {
           status: 201,
