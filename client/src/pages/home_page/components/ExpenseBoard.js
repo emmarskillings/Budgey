@@ -15,6 +15,7 @@ const makeCardStack = (cards, update) => {
          
             <div className="card my-2 mx-1">
               <div className="card-body">
+              <div className="icon-entry">
               <NavLink to={`/expense/${card["id"]}`}>
                 <FontAwesomeIcon icon="home" className="icons pb-2" />
                 <h5 className="card-title">{card["name"]}</h5>
@@ -22,11 +23,9 @@ const makeCardStack = (cards, update) => {
                   budgeted: ${card["goal"]}
                 </h6>
                 </NavLink>
-                <BarGraphs card={card} />
-
                 <Popup
                   trigger={
-                    <button type="button" className="btn btn-lg category-btn">
+                    <button id="this-button" type="button" className="btn btn-lg category-btn">
                       + Entry
                     </button>
                   }
@@ -34,6 +33,11 @@ const makeCardStack = (cards, update) => {
                   closeOnDocumentClick>
                   <NewExpenseEntry category={card} update={update} />
                 </Popup>
+                </div>
+
+                <BarGraphs card={card} />
+
+                
 
               </div>
             </div>
@@ -50,7 +54,6 @@ class ExpenseBoard extends Component {
     return (
       <div className="expense-board py-4 text-center">
         <h4 className="py-3">Expense Boards</h4>
-        <div>{makeCardStack(props.categories, props.update)}</div>
         <Popup
           trigger={
             <button type="button" className="btn btn-lg category-btn">
@@ -61,6 +64,8 @@ class ExpenseBoard extends Component {
           closeOnDocumentClick>
           <NewExpenseModal update={props.update} />
         </Popup>
+        <div>{makeCardStack(props.categories, props.update)}</div>
+      
       </div>
     );
   }
