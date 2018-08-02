@@ -13,15 +13,10 @@ module Api::V1
 
 
     def create
-      @entry = Entry.new(entry_params)
-      @entry.save
-
+      @entry = Entry.create(entry_params)
       updateCategoryTotal(@entry.amount, @entry.category_id)
 
     end
-
-    
-
 
     def destroy
       @entry = Entry.find(params[:id])
