@@ -18,6 +18,7 @@ class NewIncomeEntry extends Component {
       axios.post('/api/v1/entry.json', { entry })
         .then(response => {
            this.props.update()
+           this.props.updateHome()
         })
         .catch(error => console.log(error))
 

@@ -17,9 +17,9 @@ const makeCardStack = cards => {
                 <FontAwesomeIcon icon="home" className="icons pb-2" />
                 <h5 className="card-title">{card["name"]}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
-                  ${card["goal"]}
+                  budgeted: ${card["goal"]}
                 </h6>
-                <BarGraphs data_needed={card} />
+                <BarGraphs card={card} />
               </div>
             </div>
           </NavLink>
@@ -43,8 +43,7 @@ class ExpenseBoard extends Component {
             </button>
           }
           modal
-          closeOnDocumentClick
-        >
+          closeOnDocumentClick>
           <NewExpenseModal update={props.update} />
         </Popup>
       </div>

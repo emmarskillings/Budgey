@@ -22,7 +22,7 @@ CoolCatTeenX.categories.create!({
 	name: 'School',
 	board_type: 'expense',
 	goal: 100,
-	current_total: 120
+	current_total: 50,
 
 })
 
@@ -30,8 +30,7 @@ CoolCatTeenX.categories.create!({
 	name: 'Transportation',
 	board_type: 'expense',
 	goal: 60,
-
-	current_total: 150
+	current_total: 20
 
 })
 
@@ -39,15 +38,14 @@ CoolCatTeenX.categories.create!({
 	name: 'Hobbies',
 	board_type: 'expense',
 	goal: 250,
-
-	current_total: 200
+	current_total: 40
 })
 
 CoolCatTeenX.categories.create!({
 	name: 'Allowance',
 	board_type: 'income',
-	goal: 100,
-	current_total: 100
+	goal: 0,
+	current_total: 50
 })
 
 CoolCatTeenX.categories.create!({

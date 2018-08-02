@@ -31,7 +31,7 @@ class IncomePage extends Component {
 
   render() {
 
-    if (!localStorage.getItem('jwtToken')) {
+    if (!localStorage.getItem('jwtToken') && !localStorage.getItem('fbUser') && !localStorage.getItem('googleUser')) {
       return <Redirect to='/login' />
     }
 
@@ -39,6 +39,7 @@ class IncomePage extends Component {
       <Container>
         { this.state && this.state.entries &&
           <div>
+            <h1>Income Source - {this.state.category.name}</h1>
             <SpendingSummary entries={this.state.entries}/>
             <br/>
             <Popup trigger={
