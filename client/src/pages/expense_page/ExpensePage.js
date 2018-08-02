@@ -10,7 +10,8 @@ import { Redirect } from 'react-router-dom';
 class ExpensePage extends Component {
 
   update() {
-    axios.get(`http://localhost:3002/api/v1/category/${this.props.match.params['id']}.json`)
+    const id = this.props.match.params['id']
+    axios.get(`http://localhost:3002/api/v1/category/${id}.json`)
          .then(response => {
            this.setState({
              category: response.data[0],
@@ -34,8 +35,12 @@ class ExpensePage extends Component {
       <Container>
         { this.state && this.state.entries &&
           <div>
-            <h1>Expenses - {this.state.category.name}</h1>
+            <h1 align='center'>{this.state.category.name}</h1>
+            <br/>
+            <h5 align='center'>Current Spent: ${this.state.category.current_total}  Budgeted: ${this.state.category.goal}</h5>
+            <br/>
             <SpendingSummary category={this.state.category}/>
+            <br/>
             <br/>
             <Popup trigger={
               <button type="button" className="btn btn-primary px-4">
