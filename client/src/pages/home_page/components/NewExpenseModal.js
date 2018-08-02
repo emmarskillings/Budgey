@@ -7,6 +7,8 @@ class NewExpenseModal extends Component {
 
 
   submitNewCategory = event => {
+    console.log(event.target.exampleFormControlSelect1.value, 'we testing tho')
+
       event.preventDefault();
         const category = {
           name: event.target.categoryName.value,
@@ -26,6 +28,10 @@ class NewExpenseModal extends Component {
 
 
   render() {
+
+
+
+
     const { component: Component, ...props } = this.props
     return (
       <form onSubmit={ this.submitNewCategory }>
@@ -48,7 +54,7 @@ class NewExpenseModal extends Component {
             Select icon:
           </label>
           <div className="col-sm-9">
-            <select className="form-control" id="category-icon">
+            <select className="form-control" id="exampleFormControlSelect1">
               <option>Map</option>
               <option>Garbage Bin</option>
               <option>Train</option>
