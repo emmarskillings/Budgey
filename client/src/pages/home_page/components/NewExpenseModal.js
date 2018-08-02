@@ -19,6 +19,7 @@ class NewExpenseModal extends Component {
       axios.post(`/api/v1/category.json`, { category })
         .then(res => {
           this.props.update()
+          this.props.close()
         })
 
     }
@@ -28,7 +29,7 @@ class NewExpenseModal extends Component {
     const { component: Component, ...props } = this.props
     return (
       <form onSubmit={ this.submitNewCategory }>
-        <h4 className="py-4">Add new expense category:</h4>
+        <h4 className="py-4">Add New Expense Category:</h4>
         <div className="form-group row px-4">
           <label htmlFor="categoryName" className="col-sm-3 col-form-label">
             Title:
