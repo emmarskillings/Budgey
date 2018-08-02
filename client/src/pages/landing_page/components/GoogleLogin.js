@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
-import GoogleButton from 'react-google-button'
 import { Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Content.css'

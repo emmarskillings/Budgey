@@ -22,7 +22,7 @@ class HomePage extends Component {
         <Row>
           <div className="col-md-3">
             <IncomeBoard categories={props.categories} update={props.update} {...props}/>
-            <Rundown />
+            <Rundown categories={props.categories} update={props.update} {...props}/>
           </div>
           <div className="col-md-9">
             <div>
