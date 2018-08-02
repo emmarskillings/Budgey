@@ -24,7 +24,6 @@ class NewEntryModal extends Component {
           this.props.updateHome()
         })
 
-
     }
 
 

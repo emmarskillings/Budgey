@@ -19,6 +19,7 @@ handleClick = event => {
   axios.post('http://localhost:3002/api/v1/category.json', { category })
     .then(response => {
       this.props.update()
+      this.props.updateHome()
     })
     .catch(error => console.log(error))
 
