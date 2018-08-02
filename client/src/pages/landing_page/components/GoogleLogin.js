@@ -15,8 +15,10 @@ class LoginWithGoogle extends Component {
 
   responseGoogle = (res) => {
     var token = res.accessToken
-    localStorage.setItem('googleToken', token);
-    this.setState({ redirect: true })
+    if (token !== undefined) {
+      localStorage.setItem('googleToken', token);
+      this.setState({ redirect: true })
+    }
   }
 
   render() {
