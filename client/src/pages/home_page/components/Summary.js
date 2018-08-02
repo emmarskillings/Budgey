@@ -11,7 +11,6 @@ class CategoryContainer extends Component {
 	
 	
 
-  //Function to update state for messages
 
 
 
