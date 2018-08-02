@@ -21,8 +21,8 @@ class HomePage extends Component {
       <Container>
         <Row>
           <div className="col-md-3">
-            <IncomeBoard />
-            <Rundown categories={props.categories} update={props.update} {...props} />
+            <IncomeBoard categories={props.categories} update={props.update} {...props}/>
+            <Rundown />
           </div>
           <div className="col-md-9">
             <div>

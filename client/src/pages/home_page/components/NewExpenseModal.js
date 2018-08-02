@@ -21,13 +21,11 @@ class NewExpenseModal extends Component {
           this.props.update()
         })
 
-
     }
 
 
   render() {
     const { component: Component, ...props } = this.props
-    console.log('PROPS: ', this.props)
     return (
       <form onSubmit={ this.submitNewCategory }>
         <h4 className="py-4">Add new expense category:</h4>
