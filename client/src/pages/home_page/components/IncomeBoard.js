@@ -51,7 +51,9 @@ getIncomeCategory = () => {
                 Add Income Source
               </button>
             } modal closeOnDocumentClick>
-            <NewIncomeModal update={props.update}/>
+            {close => (
+              <NewIncomeModal update={props.update} close ={close.bind(this)}/>
+            )}
         </Popup>
       </div>
     );

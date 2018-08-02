@@ -19,6 +19,7 @@ class NewIncomeEntry extends Component {
         .then(response => {
            this.props.update()
            this.props.updateHome()
+           this.props.close()
         })
         .catch(error => console.log(error))
 
