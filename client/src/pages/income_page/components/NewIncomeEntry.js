@@ -5,6 +5,7 @@ import axios from 'axios';
 class NewIncomeEntry extends Component {
 
   handleClick = event => {
+    event.preventDefault();
 
       const entry = {
         name: event.target.entryName.value,

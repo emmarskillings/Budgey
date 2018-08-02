@@ -61,8 +61,6 @@ class IncomeTable extends Component {
   }
 
 
-
-
   render() {
     const { component: Component, ...props } = this.props
     if (this.state.deleted){

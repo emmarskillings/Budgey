@@ -3,9 +3,9 @@ import { Container } from "reactstrap";
 import SpendingSummary from "./components/SpendingSummary";
 import IncomeTable from "./components/IncomeTable";
 import NewIncomeEntry from "./components/NewIncomeEntry";
-
 import axios from "axios";
 import Popup from "reactjs-popup";
+import { Redirect } from 'react-router-dom';
 
 
 class IncomePage extends Component {
@@ -23,28 +23,6 @@ class IncomePage extends Component {
 
   }
 
-  // updateDatabase(to_add){
-  //
-  //   var new_total = this.state.category.current_total + parseFloat(to_add);
-  //
-  //   // console.log(new_total, 'this the new total ya')
-  //
-  //   const { id } = this.props.match.params
-  //   axios.put(`http://localhost:3002/api/v1/category/${id}`, {
-  //      current_total: new_total,
-  //      name: this.state.category.name,
-  //      user_id: this.state.category.user_id,
-  //      board_type: this.state.category.board_type,
-  //      goal: this.state.category.goal})
-  //     .then(response => {
-  //
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  //
-  // }
-
   componentDidMount() {
     this.update();
 
@@ -52,6 +30,10 @@ class IncomePage extends Component {
 
 
   render() {
+
+    if (!localStorage.getItem('jwtToken')) {
+      return <Redirect to='/login' />
+    }
 
     return (
       <Container>
