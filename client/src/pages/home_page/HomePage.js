@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./HomePage.css";
 import { Container, Row} from "reactstrap";
 import ExpenseBoard from "./components/ExpenseBoard";
 import Summary from "./components/Summary";
@@ -20,11 +21,11 @@ class HomePage extends Component {
     return (
       <Container>
         <Row>
-          <div className="col-md-3">
+          <div className="col-md-3" id="left-div">
             <IncomeBoard categories={props.categories} update={props.update} {...props}/>
             <Rundown categories={props.categories} update={props.update} {...props}/>
           </div>
-          <div className="col-md-9">
+          <div className="col-md-9" id="right-div">
             <div>
               <Summary />
             </div>
