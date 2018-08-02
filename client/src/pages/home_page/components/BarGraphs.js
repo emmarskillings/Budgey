@@ -13,12 +13,10 @@ class BarGraphs extends Component {
     }
 
     return (
-      <div className="fdfdd">
-        <div>
+      <div>
           <Progress color={barColor} value={percentage}>
             $ {card.current_total}
           </Progress>
-        </div>
       </div>
     );
   }
