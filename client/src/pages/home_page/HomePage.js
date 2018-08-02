@@ -26,7 +26,7 @@ class HomePage extends Component {
           </div>
           <div className="col-md-9">
             <div>
-              <Summary />
+              <Summary update={props.update} />
             </div>
             <div>
               <ExpenseBoard categories={props.categories} update={props.update} {...props} />
