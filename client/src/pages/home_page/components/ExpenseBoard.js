@@ -5,24 +5,43 @@ import NewExpenseModal from "./NewExpenseModal";
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";
 import BarGraphs from "./BarGraphs.js";
+import NewExpenseEntry from "./NewExpenseEntry.js";
 
-const makeCardStack = cards => {
+const makeCardStack = (cards, update) => {
   const allCards = cards.map(card => {
     switch (card["board_type"]) {
       case "expense":
         return (
-          <NavLink to={`/expense/${card["id"]}`}>
+         
             <div className="card my-2 mx-1">
               <div className="card-body">
+              <div className="icon-entry">
+              <NavLink to={`/expense/${card["id"]}`}>
                 <FontAwesomeIcon icon="home" className="icons pb-2" />
                 <h5 className="card-title">{card["name"]}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   budgeted: ${card["goal"]}
                 </h6>
+                </NavLink>
+                <Popup
+                  trigger={
+                    <button id="this-button" type="button" className="btn btn-lg category-btn">
+                      + Entry
+                    </button>
+                  }
+                  modal
+                  closeOnDocumentClick>
+                  <NewExpenseEntry category={card} update={update} />
+                </Popup>
+                </div>
+
                 <BarGraphs card={card} />
+
+                
+
               </div>
             </div>
-          </NavLink>
+       
         );
     }
   });
@@ -35,7 +54,9 @@ class ExpenseBoard extends Component {
     return (
       <div className="expense-board py-4 text-center">
         <h4 className="py-3">Expense Boards</h4>
+
         <div id="expense-card-container">{makeCardStack(props.categories)}</div>
+
         <Popup
           trigger={
             <button type="button" className="btn btn-lg category-btn">
@@ -46,6 +67,8 @@ class ExpenseBoard extends Component {
           closeOnDocumentClick>
           <NewExpenseModal update={props.update} />
         </Popup>
+        <div>{makeCardStack(props.categories, props.update)}</div>
+      
       </div>
     );
   }
