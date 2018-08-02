@@ -20,7 +20,7 @@ class CategoryContainer extends Component {
 
     this.setState({ categories: [
       ...this.state.categories,
-      { 
+      {
         id: newCategory.id,
         name: newCategory.name,
         user_id: newCategory.user_id,
@@ -34,19 +34,15 @@ class CategoryContainer extends Component {
     })
   }
 
-
-
-  
 	componentDidMount() {
-	axios
-	  .get("http://localhost:3002/api/v1/category.json")
-	  .then(response => {
-	    this.setState({
-	      categories: response.data
-	    });
-      console.log(this.state)
-	  })
-	  .catch(error => console.log(error));
+		axios.get("http://localhost:3002/api/v1/category.json")
+		  .then(response => {
+		    this.setState({
+		      categories: response.data
+		    });
+	      console.log(this.state)
+		  })
+		  .catch(error => console.log(error));
 	}
   render() {
 
@@ -62,36 +58,34 @@ class CategoryContainer extends Component {
 
     }
 
-
-
   	var dataPoint = [];
     var labels = [];
     var colors = [];
     var dataPoint2 = [];
     var labels2 = [];
-    var colors2 = [];  
+    var colors2 = [];
   	var name = this.state.categories;
 
   	name.forEach(function(element){
       if (element.board_type === 'expense'){
 
-  		var to_add = element.current_total
-      var to_add2 = element.name
-      var to_add3 = generate_color()
+	  		var to_add = element.current_total
+	      var to_add2 = element.name
+	      var to_add3 = generate_color()
 
-  		dataPoint.push(to_add);
-      labels.push(to_add2);
-      colors.push(to_add3);
+	  		dataPoint.push(to_add);
+	      labels.push(to_add2);
+	      colors.push(to_add3);
       }
 
       else {
-      var to_add = element.current_total
-      var to_add2 = element.name
-      var to_add3 = generate_color()
+	      var to_add = element.current_total
+	      var to_add2 = element.name
+	      var to_add3 = generate_color()
 
-      dataPoint2.push(to_add);
-      labels2.push(to_add2);
-      colors2.push(to_add3);
+	      dataPoint2.push(to_add);
+	      labels2.push(to_add2);
+	      colors2.push(to_add3);
 
       }
 
@@ -102,55 +96,23 @@ class CategoryContainer extends Component {
       responsive: true,
   	  legend: {
   	  	"display": true,
-  	  	"position":"top"
-  	  
+  	  	"position":"right",
   	  },
   	},
-
-
     data= {
             labels: labels,
             datasets: [{
-            label: "My First dataset",
-            backgroundColor: colors,
-            data: dataPoint,
+	            label: "My First dataset",
+	            backgroundColor: colors,
+	            data: dataPoint,
             }]
         }
 
-        var options2 = {
-          responsive: true,
-          legend: {
-            "display": true,
-            "position":"top"
-          
-          },
-        },
-
-
-        data2= {
-                labels: labels2,
-                datasets: [{
-                label: "My First dataset",
-                backgroundColor: colors2,
-                data: dataPoint2,
-                }]
-            }
-
-  
   return(
-  	<div>
-    <h2 align='center'>Expenses</h2>
-
-  	<Doughnut data={data} options={options} width = {500} height = {100}/>
-
-    <br></br>
-
-
-    {/* <h2 align='center'>Income</h2>
-
-    <Doughnut data={data2} options={options2} width = {600} height = {250}/> */}
-
-
+  	<div style={{'padding-right':200}}>
+	    <h4 align='left'>Spending Summary</h4>
+	  	<Doughnut data={data} options={options} height={100}/>
+			<br/>
   	</div>
   	)
 
