@@ -30,7 +30,7 @@ getIncomeCategory = () => {
 
     return (
       <div className="income-board py-4 text-center">
-        <h4>Income Boards</h4>
+        <h4>Income</h4>
         <div id="income-card-container">
         {income_categories.map((category)=>{
           return(

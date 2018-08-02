@@ -76,8 +76,16 @@ class CategoryContainer extends Component {
       responsive: true,
   	  legend: {
   	  	"display": true,
-  	  	"position":"right",
-  	  },
+        "position": "right"
+      },
+      layout: {
+        padding: {
+          left: 0,
+          right: 300,
+          top: 0,
+          bottom: 0
+        }
+      }
   	}
 
     const data = {
@@ -89,10 +97,11 @@ class CategoryContainer extends Component {
         }
 
 	  return(
-	  	<div style={{'padding-right':200}}>
-		    <h4 align='left'>Spending Summary</h4>
-		  	<Doughnut data={data} options={options} height={100}/>
-				<br/>
+	  	<div className="summary text-center">
+        <h4 className="py-3">Expense</h4>
+        <div id="pie-chart">
+		  	  <Doughnut data={data} options={options} height={85}/>
+        </div>
 	  	</div>
 	  	)
 
