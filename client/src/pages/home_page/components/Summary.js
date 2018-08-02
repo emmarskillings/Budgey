@@ -8,41 +8,12 @@ import {Doughnut} from 'react-chartjs-2';
 class CategoryContainer extends Component {
 
 
-	constructor(props) {
-	  super(props);
-	  this.state = {
-	    categories: [],
-	  }
-	}
+	
+	
 
   //Function to update state for messages
-  updateCategory = (newCategory) => {
-
-    this.setState({ categories: [
-      ...this.state.categories,
-      {
-        id: newCategory.id,
-        name: newCategory.name,
-        user_id: newCategory.user_id,
-        board_type: newCategory.board_type,
-        goal: newCategory.goal,
-        current_total: newCategory.current_total,
-        updated_at: newCategory.updated_at
 
 
-      } ]
-    })
-  }
-
-	componentDidMount() {
-		axios.get("http://localhost:3002/api/v1/category.json")
-		  .then(response => {
-		    this.setState({
-		      categories: response.data
-		    });
-		  })
-		  .catch(error => console.log(error));
-	}
 
   render() {
 
@@ -64,7 +35,7 @@ class CategoryContainer extends Component {
     const labels = [];
     const colors = [];
 
-  	this.state.categories.forEach(function(category){
+  	this.props.categories.forEach(function(category){
       if (category.board_type === 'expense'){
 	  		dataPoint.push(category.current_total);
 	      labels.push(category.name);
