@@ -20,7 +20,7 @@ const makeCardStack = (cards, update) => {
                     <FontAwesomeIcon icon="home" className="icons pb-2" />
                     <h5 className="card-title">{card["name"]}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">
-                      budgeted: ${card["goal"]}
+                      Budgeted - ${card["goal"]}
                     </h6>
                   </NavLink>
                 </div>
@@ -31,11 +31,10 @@ const makeCardStack = (cards, update) => {
                   <Popup
                     trigger={
                       <button
-                        id="this-button"
                         type="button"
-                        className="btn btn-lg category-btn"
+                        className="btn btn-outline-danger quick-entry-btn"
                       >
-                        + Entry
+                        + Expense Entry
                       </button>
                     }
                     modal
