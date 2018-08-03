@@ -11,11 +11,13 @@ import { faTrain } from '@fortawesome/free-solid-svg-icons'
 import NewExpenseModal from "./NewExpenseModal";
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";
+import { fab } from '@fortawesome/free-brands-svg-icons'
 import BarGraphs from "./BarGraphs.js";
 import NewEntryModal from "../../expense_page/components/NewEntryModal";
 
 const makeCardStack = (cards, update) => {
   const allCards = cards.map(card => {
+    console.log(card, "we here ya'll")
     var icon_living = `${card["icon"]}`
     console.log(icon_living)
     switch (card["board_type"]) {
@@ -27,7 +29,7 @@ const makeCardStack = (cards, update) => {
               <div className="row">
                 <div className="col-md-2">
                   <NavLink to={`/expense/${card["id"]}`}>
-                    <FontAwesomeIcon icon={icon_living}/>
+                    <FontAwesomeIcon icon={'faCoffee'}/>
                     <h5 className="card-title">{card["name"]}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">
                       Budgeted - ${card["goal"]}
