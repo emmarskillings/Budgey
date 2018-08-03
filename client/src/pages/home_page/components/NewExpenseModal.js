@@ -13,6 +13,8 @@ class NewExpenseModal extends Component {
         const category = {
           name: event.target.categoryName.value,
           board_type: 'expense',
+          icon: event.target.exampleFormControlSelect1.value,
+          color: 'blue',
           goal: event.target.maxGoal.value,
           current_total: 0,
           user_id: 1,
