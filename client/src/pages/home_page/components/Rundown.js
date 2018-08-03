@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Rundown.css";
+import NumberFormat from "react-number-format";
 
 class Rundown extends Component {
   render() {
@@ -21,12 +22,33 @@ class Rundown extends Component {
     }
 
     return (
-      <div className="rundown text-center">
-        <br />
-        <h5>Income: $ {total_income}</h5>
-        <h5>Expenses: $ {total_expenses}</h5>
-        <h6>-----------------------</h6>
-        <h5 style={{ color: color }}>Net Total: $ {amount_left}</h5>
+      <div className="rundown text-center mt-3">
+        <h4>You've budgeted...</h4>
+        <div className="rundown-income row justify-content-between">
+          <div className="col-5">
+            <h6>Income</h6>
+          </div>
+          <div className="col-5" id="total-income">
+            <NumberFormat value=${total_income} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+          </div>
+        </div>
+        <div className="rundown-spending row justify-content-between">
+          <div className="col-5">
+            <h6>Spending</h6>
+          </div>
+          <div className="col-5" id="total-expenses">
+            <NumberFormat value=${total_expenses} displayText={'text'} thousandSeparator={true} prefix={'-$'} />
+          </div>
+        </div>
+        <hr />
+        <div className="rundown-leftover row justify-content-between">
+          <div className="col-5">
+            <h6>Leftover</h6>
+          </div>
+          <div className="col-5">
+            <p id="amount-left" style={{ color: color }}>${amount_left}</p>
+          </div>
+        </div>
       </div>
     );
   }
