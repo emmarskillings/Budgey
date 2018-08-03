@@ -15,7 +15,6 @@ class Navbar extends Component {
     var fbUser = localStorage.getItem("fbToken");
     var googleUser = localStorage.getItem("googleToken");
     var loginLogout;
-    var messageCentre;
     var navbarBrand;
     var signup;
     if (user || fbUser || googleUser) {
@@ -24,11 +23,6 @@ class Navbar extends Component {
           <div className="navbar-right-div logout" onClick={this.logout}>
             Logout
           </div>
-        </NavLink>
-      );
-      messageCentre = (
-        <NavLink to="/home">
-          <div className="navbar-right-div">Message Centre</div>
         </NavLink>
       );
       navbarBrand = (
@@ -57,7 +51,6 @@ class Navbar extends Component {
       <nav className="navbar justify-content-between mb-3">
         {navbarBrand}
         <div className="navbar justify-content-between">
-          {messageCentre}
           {signup}
           {loginLogout}
         </div>
