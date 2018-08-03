@@ -32,6 +32,12 @@ module Api::V1
       @category.destroy
     end
 
+    def update
+      category = Category.find(params[:id])
+      category.goal = params[:newGoal]
+      category.save
+    end
+
 
 
     private

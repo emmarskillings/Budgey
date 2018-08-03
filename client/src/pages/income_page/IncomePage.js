@@ -43,31 +43,22 @@ class IncomePage extends Component {
                 total: ${this.state.category.current_total}
               </h4>
               <br />
-              <Popup
-                trigger={
+              <Popup trigger={
                   <button type="button" className="btn btn-primary px-4">
                     Add Entry
-                  </button>
-                }
-                modal
-                closeOnDocumentClick
-              >
+                  </button> } modal closeOnDocumentClick>
                 {close => (
-                  <NewIncomeEntry
-                    update={this.update.bind(this)}
+                  <NewIncomeEntry update={this.update.bind(this)}
                     updateHome={this.props.update}
                     state_category={this.state.category}
                     state_entry={this.state.entry}
-                    close={close.bind(this)}
-                  />
-                )}
+                    close={close.bind(this)} />
+                 )}
               </Popup>
-              <IncomeTable
-                entries={this.state.entries}
+              <IncomeTable entries={this.state.entries}
                 id={this.state.category.id}
                 update={this.update.bind(this)}
-                updateHome={this.props.update}
-              />
+                updateHome={this.props.update} />
             </div>
           )}
       </Container>
