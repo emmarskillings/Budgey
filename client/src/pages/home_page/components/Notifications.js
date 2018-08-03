@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
+
 
 class Notification extends Component {
-  //
-  // createNotification = () => {
-  //   return() => {
-      // NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
-  //   }
-  // }
-  //
-  // categories = (props) => {
-  //   var overBudget = [];
-  //   for (var i = 0; i > props.categories.length; i++) {
-  //     if (props.categories[i].current_total > props.categories[i].goal) {
-  //       overBudget.push(props.categories[i])
-  //     }
-  //   }
-  //   return overBudget;
-  // }
-  createNotification = (type) => {
+
+  componentDidMount() {
+    this.createNotification()
+  }
+
+  createNotification = () => {
     var overBudget = [];
     for (var i = 0; i < this.props.categories.length; i++) {
       if (this.props.categories[i].board_type === 'expense') {
@@ -27,24 +18,16 @@ class Notification extends Component {
         }
       }
     }
-    return () => {
-      switch(type) {
-        case 'warning':
-        console.log('warning')
-        break;
-        // for (var i = 0; i < overBudget.length; i++) {
-        //   NotificationManager.warning(`Warning - you have gone over your budgeting goal for ${overBudget[i].name}`, 'Close after 3000ms', 3000);
-        // }
-      }
+
+    for (var i = 0; i < overBudget.length; i++) {
+      NotificationManager.warning(`You have gone over your budgeting goal for ${overBudget[i].name}`, 'Warning',  3000);
     }
   }
 
+
   render() {
     return (
-      <div>
-        <div onLoad={this.createNotification('warning')}></div>
-        <NotificationContainer />
-      </div>
+      <NotificationContainer />
     )
   }
 
