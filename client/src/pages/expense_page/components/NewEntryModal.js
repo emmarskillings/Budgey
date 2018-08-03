@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./NewEntryModal.css";
 import axios from "axios";
+import NumberFormat from "react-number-format";
 
 class NewEntryModal extends Component {
   submitNewCategory = event => {
