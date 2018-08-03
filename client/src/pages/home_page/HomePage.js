@@ -5,24 +5,11 @@ import ExpenseBoard from "./components/ExpenseBoard";
 import Summary from "./components/Summary";
 import IncomeBoard from "./components/IncomeBoard";
 import Rundown from "./components/Rundown";
-<<<<<<< HEAD
+import Notifications from './components/Notifications'
 import { Redirect } from 'react-router-dom';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
-
 
 class HomePage extends Component {
 
-  createNotification = () => {
-    return() => {
-      NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
-    }
-  }
-
-=======
-import { Redirect } from "react-router-dom";
-
-class HomePage extends Component {
->>>>>>> master
   render() {
     const { component: Component, ...props } = this.props;
 
@@ -50,8 +37,10 @@ class HomePage extends Component {
             />
           </div>
           <div className="col-md-9" id="right-div">
+          <Notifications categories={props.categories} />
             <div>
               <Summary categories={props.categories} update={props.update} />
+
             </div>
             <div>
               <ExpenseBoard
