@@ -6,8 +6,16 @@ import Summary from "./components/Summary";
 import IncomeBoard from "./components/IncomeBoard";
 import Rundown from "./components/Rundown";
 import { Redirect } from 'react-router-dom';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 
 class HomePage extends Component {
+
+  createNotification = () => {
+    return() => {
+      NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+    }
+  }
 
   render() {
 

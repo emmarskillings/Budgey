@@ -1,6 +1,11 @@
+.container {
+  background: white
+}
+
 .landing-content {
   padding-top: 5em;
   text-align: center;
+  color: black;
 }
 
 .tagline {
