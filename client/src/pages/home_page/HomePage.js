@@ -5,7 +5,8 @@ import ExpenseBoard from "./components/ExpenseBoard";
 import Summary from "./components/Summary";
 import IncomeBoard from "./components/IncomeBoard";
 import Rundown from "./components/Rundown";
-import { Redirect } from "react-router-dom";
+import Notifications from './components/Notifications'
+import { Redirect } from 'react-router-dom';
 
 class HomePage extends Component {
 
@@ -41,8 +42,10 @@ class HomePage extends Component {
             />
           </div>
           <div className="col-md-9" id="right-div">
+          <Notifications categories={props.categories} />
             <div>
               <Summary categories={props.categories} update={props.update} />
+
             </div>
             <div>
               <ExpenseBoard
