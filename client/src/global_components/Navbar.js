@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import { Redirect, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   logout = event => {
     localStorage.removeItem("jwtToken");

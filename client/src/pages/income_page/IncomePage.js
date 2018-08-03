@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import SpendingSummary from "./components/SpendingSummary";
 import IncomeTable from "./components/IncomeTable";
 import NewIncomeEntry from "./components/NewIncomeEntry";
 import axios from "axios";
