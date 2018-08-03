@@ -6,14 +6,7 @@ class CategoryContainer extends Component {
   //Function to update state for messages
 
   render() {
-    const generate_color = () => {
-      var letters = "0123456789ABCDEF";
-      var color = "#";
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    };
+    
 
     const dataPoint = [];
     const labels = [];
@@ -23,7 +16,8 @@ class CategoryContainer extends Component {
       if (category.board_type === "expense") {
         dataPoint.push(category.current_total);
         labels.push(category.name);
-        colors.push(generate_color());
+
+        colors.push(category.color);
       }
     });
 
