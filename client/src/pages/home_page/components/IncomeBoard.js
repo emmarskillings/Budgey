@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./IncomeBoard.css";
 import NewIncomeModal from "./NewIncomeModal";
 import Popup from "reactjs-popup";
-import axios from "axios";
 import { NavLink } from "react-router-dom";
 
 class IncomeBoard extends Component {

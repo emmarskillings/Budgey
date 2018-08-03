@@ -8,7 +8,7 @@ import HomePage from "./pages/home_page/HomePage";
 import ExpensePage from "./pages/expense_page/ExpensePage";
 import IncomePage from "./pages/income_page/IncomePage";
 import axios from "axios";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHome,
@@ -33,9 +33,6 @@ library.add(
 );
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   update() {
     const currUser = localStorage.getItem('currUser_id');

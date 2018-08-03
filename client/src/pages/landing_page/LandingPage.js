@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container } from "reactstrap";
 import Content from "./components/Content";
 import LoginWithFacebook from "./components/FacebookLogin";
 import LoginWithGoogle from "./components/GoogleLogin";
