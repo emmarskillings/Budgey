@@ -19,15 +19,15 @@ ActiveRecord::Schema.define(version: 2018_07_25_204856) do
     t.string "name"
     t.integer "user_id"
     t.string "board_type"
-    t.integer "goal"
-    t.integer "current_total"
+    t.decimal "goal", precision: 10, scale: 2
+    t.decimal "current_total", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "entries", force: :cascade do |t|
     t.integer "category_id"
-    t.integer "amount"
+    t.decimal "amount", precision: 10, scale: 2
     t.string "name"
     t.string "description"
     t.date "date"

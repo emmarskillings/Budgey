@@ -21,14 +21,12 @@ module Api::V1
       category = Category.create(category_params)
     end
 
-
     def new
       category = Category.new
     end
 
     def destroy
       @category = Category.find(params[:id])
-
       @category.destroy
     end
 
@@ -38,13 +36,9 @@ module Api::V1
       category.save
     end
 
-
-
     private
-
     def category_params
       params.require(:category).permit(
-
         :name,
         :user_id,
         :board_type,
@@ -52,8 +46,5 @@ module Api::V1
         :current_total
         )
     end
-
-
   end
-
 end
