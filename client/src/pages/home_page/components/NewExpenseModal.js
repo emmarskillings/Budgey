@@ -4,15 +4,31 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 
 class NewExpenseModal extends Component {
+
+   generate_color = () => {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+
+
+
+
   submitNewCategory = event => {
-    console.log(event.target.exampleFormControlSelect1.value, 'we testing tho')
+    console.log(this.props, 'we testing tho')
+
+
+
 
       event.preventDefault();
         const category = {
           name: event.target.categoryName.value,
           board_type: 'expense',
           icon: event.target.exampleFormControlSelect1.value,
-          color: 'blue',
+          color: this.generate_color(),
           goal: event.target.maxGoal.value,
           current_total: 0,
           user_id: Number(localStorage.getItem('currUser_id')),
@@ -56,11 +72,11 @@ class NewExpenseModal extends Component {
           </label>
           <div className="col-sm-9">
             <select className="form-control" id="exampleFormControlSelect1">
-              <option>Map</option>
-              <option>Garbage Bin</option>
-              <option>Train</option>
-              <option>Phone</option>
-              <option>Pet</option>
+              <option>map</option>
+              <option>coffee</option>
+              <option>train</option>
+              <option>phone</option>
+              <option>utensils</option>
             </select>
           </div>
         </div>

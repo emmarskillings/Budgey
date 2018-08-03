@@ -1,19 +1,27 @@
 import React, { Component } from "react";
 import "./ExpenseBoard.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faMap } from '@fortawesome/free-solid-svg-icons';
-import { faPet } from '@fortawesome/free-solid-svg-icons';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faTrain } from '@fortawesome/free-solid-svg-icons'
-
-
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee, faMap, faTrain, faPhone, faFood, faUtensils} from '@fortawesome/free-solid-svg-icons'
+ 
 import NewExpenseModal from "./NewExpenseModal";
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";
-import { fab } from '@fortawesome/free-brands-svg-icons'
 import BarGraphs from "./BarGraphs.js";
 import NewEntryModal from "../../expense_page/components/NewEntryModal";
+
+
+
+
+
+
+library.add(fab, faCheckSquare, faCoffee, faMap, faTrain, faPhone, faUtensils)
+
+
+
+
+
 
 const makeCardStack = (cards, update) => {
   const allCards = cards.map(card => {
@@ -29,7 +37,7 @@ const makeCardStack = (cards, update) => {
               <div className="row">
                 <div className="col-md-2">
                   <NavLink to={`/expense/${card["id"]}`}>
-                    <FontAwesomeIcon icon={'faCoffee'}/>
+                    <FontAwesomeIcon icon={icon_living}/>
                     <h5 className="card-title">{card["name"]}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">
                       Budgeted - ${card["goal"]}
