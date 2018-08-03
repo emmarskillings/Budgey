@@ -8,7 +8,7 @@ import HomePage from "./pages/home_page/HomePage";
 import ExpensePage from "./pages/expense_page/ExpensePage";
 import IncomePage from "./pages/income_page/IncomePage";
 import axios from "axios";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHome,
@@ -33,19 +33,18 @@ library.add(
 );
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   update() {
-    const currUser = localStorage.getItem('currUser_id');
-    axios.get("http://localhost:3002/api/v1/category.json", {params: {user_id: currUser}})
-         .then(response => {
-           this.setState({
-             categories: response.data
-           });
-          })
-         .catch(error => console.log(error));
+    const currUser = localStorage.getItem("currUser_id");
+    axios
+      .get("http://localhost:3002/api/v1/category.json", {
+        params: { user_id: currUser }
+      })
+      .then(response => {
+        this.setState({
+          categories: response.data
+        });
+      })
+      .catch(error => console.log(error));
   }
 
   componentDidMount() {
@@ -53,27 +52,48 @@ class App extends Component {
     this.update();
   }
 
-
   render() {
     return (
       <BrowserRouter>
         <div>
-          {this.state && this.state.categories && (
+          {this.state &&
+            this.state.categories && (
               <div>
                 <Navbar />
                 <Switch>
                   <Route exact path="/" component={LandingPage} />
                   <Route path="/signup" component={SignupPage} />
                   <Route path="/login" component={LoginPage} />
-                  <Route path="/home" render={props => (
-                      <HomePage categories={this.state.categories} update={this.update.bind(this)} {...props}/>
-                    )} />
-                  <Route path="/expense/:id" render={props => (
-                      <ExpensePage categories={this.state.categories} update={this.update.bind(this)} {...props} />
-                    )} />
-                  <Route path="/income/:id" render={props => (
-                      <IncomePage categories={this.state.categories} update={this.update.bind(this)} {...props} />
-                    )} />
+                  <Route
+                    path="/home"
+                    render={props => (
+                      <HomePage
+                        categories={this.state.categories}
+                        update={this.update.bind(this)}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/expense/:id"
+                    render={props => (
+                      <ExpensePage
+                        categories={this.state.categories}
+                        update={this.update.bind(this)}
+                        {...props}
+                      />
+                    )}
+                  />
+                  <Route
+                    path="/income/:id"
+                    render={props => (
+                      <IncomePage
+                        categories={this.state.categories}
+                        update={this.update.bind(this)}
+                        {...props}
+                      />
+                    )}
+                  />
                 </Switch>
               </div>
             )}

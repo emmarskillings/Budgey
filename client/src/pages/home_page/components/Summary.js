@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./Summary.css";
 import { Doughnut } from "react-chartjs-2";
 
@@ -57,7 +56,7 @@ class CategoryContainer extends Component {
     return (
       <div className="summary text-center">
         <h4 className="py-3">Expenses</h4>
-        <div id="pie-chart">
+        <div className="pt-2" id="pie-chart">
           <Doughnut data={data} options={options} height={85} />
         </div>
       </div>

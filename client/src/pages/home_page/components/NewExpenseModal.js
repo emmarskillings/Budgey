@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./NewExpenseModal.css";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 
 class NewExpenseModal extends Component {
   submitNewCategory = event => {

@@ -4,10 +4,13 @@ import BarGraphs from "../home_page/components/BarGraphs";
 import ExpenseTable from "./components/ExpenseTable";
 import axios from "axios";
 import NewEntryModal from "./components/NewEntryModal";
+import BudgetEditor from "./components/budgetEditor";
 import Popup from "reactjs-popup";
 import { Redirect } from "react-router-dom";
 
 class ExpensePage extends Component {
+
+
   update() {
     const id = this.props.match.params["id"];
     axios
@@ -38,6 +41,14 @@ class ExpensePage extends Component {
         { this.state && this.state.entries &&
           <div>
             <br/>
+            <Popup trigger={
+              <button type="button" className="btn btn-primary px-4">
+              Edit Budget Amount
+              </button>} modal closeOnDocumentClick>
+              {close => (
+                <BudgetEditor update={this.update.bind(this)} id={this.state.category.id} updateHome={this.props.update} close={close.bind(this)}/>
+              )}
+            </Popup>
             <h1 align='center'>{this.state.category.name}</h1>
             <h4 align='center'>budgeted: ${this.state.category.goal}</h4>
             <br/>
