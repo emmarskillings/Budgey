@@ -10,6 +10,12 @@ import { Redirect } from 'react-router-dom';
 
 class HomePage extends Component {
 
+
+  componentDidMount() {
+    console.log("Welcome!");
+    this.props.update();
+  }
+
   render() {
     const { component: Component, ...props } = this.props;
 
@@ -20,7 +26,6 @@ class HomePage extends Component {
     ) {
       return <Redirect to="/login" />;
     }
-
     return (
       <Container>
         <Row>

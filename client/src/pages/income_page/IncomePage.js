@@ -36,8 +36,7 @@ class IncomePage extends Component {
 
     return (
       <Container>
-        {this.state &&
-          this.state.entries && (
+        {this.state && this.state.entries && (
             <div>
               <h1 align="center">{this.state.category.name}</h1>
               <h4 align="center">

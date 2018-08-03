@@ -3,15 +3,14 @@ module Api::V1
   class CategoryController < ApplicationController
 
     skip_before_action :authenticate
-    
+
     def index
-      @categories = Category.all
+      @categories = Category.where(user_id: params[:user_id].to_i)
       @categories = @categories.order(id: :desc).all
       render json: @categories
     end
 
     def show
-
       @category = Category.find params[:id]
       @entries = Entry.where(category_id: @category.id)
       @entries = @entries.order(id: :desc).all
@@ -22,7 +21,6 @@ module Api::V1
       category = Category.create(category_params)
     end
 
-   
 
     def new
       category = Category.new
