@@ -10,9 +10,15 @@ class NewIncomeModal extends Component {
       board_type: "income",
       goal: 0,
       current_total: 0,
-      user_id: localStorage.getItem('currUser_id'),
-  };
-}
+      user_id: Number(localStorage.getItem('currUser_id')),
+    };
+
+    axios.post(`/api/v1/category.json`, { category })
+      .then(res => {
+        this.props.update()
+        this.props.close()
+      })
+  }
 
   render() {
     const { component: Component, ...props } = this.props;
@@ -28,7 +34,7 @@ class NewIncomeModal extends Component {
               type="text"
               className="form-control"
               id="categoryName"
-              placeholder="i.e. Vacation"
+              placeholder="i.e. Job 1"
             />
           </div>
         </div>

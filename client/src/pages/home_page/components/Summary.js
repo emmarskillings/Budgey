@@ -56,7 +56,7 @@ class CategoryContainer extends Component {
 
     return (
       <div className="summary text-center">
-        <h4 className="py-3">Expense</h4>
+        <h4 className="py-3">Expenses</h4>
         <div id="pie-chart">
           <Doughnut data={data} options={options} height={85} />
         </div>
