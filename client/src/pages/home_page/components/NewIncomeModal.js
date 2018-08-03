@@ -1,34 +1,23 @@
 import React, { Component } from "react";
 import "./NewIncomeModal.css";
-import axios from 'axios';
-
+import axios from "axios";
 
 class NewIncomeModal extends Component {
-
-handleClick = event => {
-
-  event.preventDefault();
+  handleClick = event => {
+    event.preventDefault();
     const category = {
       name: event.target.categoryName.value,
-      board_type: 'income',
+      board_type: "income",
       goal: 0,
       current_total: 0,
-      user_id: 1,
+      user_id: localStorage.getItem('currUser_id'),
   };
-
-  axios.post('http://localhost:3002/api/v1/category.json', { category })
-    .then(response => {
-      this.props.update()
-      this.props.close()
-    })
-    .catch(error => console.log(error))
-
 }
 
   render() {
-    const { component: Component, ...props } = this.props
+    const { component: Component, ...props } = this.props;
     return (
-      <form onSubmit={ this.handleClick }>
+      <form onSubmit={this.handleClick}>
         <h4 className="py-4">Add new Income category:</h4>
         <div className="form-group row px-4">
           <label htmlFor="categoryName" className="col-sm-3 col-form-label">
@@ -51,7 +40,7 @@ handleClick = event => {
           </div>
         </div>
       </form>
-    )
+    );
   }
 }
 

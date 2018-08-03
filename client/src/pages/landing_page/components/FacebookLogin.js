@@ -1,38 +1,36 @@
-import React, { Component } from 'react';
-import FacebookLogin from 'react-facebook-login';
-import { Redirect } from 'react-router-dom';
+import React, { Component } from "react";
+import FacebookLogin from "react-facebook-login";
+import { Redirect } from "react-router-dom";
 
 class LoginWithFacebook extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       redirect: false
-    }
+    };
   }
 
-  redirect = (event) => {
-    var user = JSON.parse(localStorage.getItem('fbUser'));
+  redirect = event => {
+    var user = JSON.parse(localStorage.getItem("fbUser"));
     if (user) {
-      var token = user.accessToken
-      console.log(token)
+      var token = user.accessToken;
+      console.log(token);
     }
     if (token !== undefined) {
-      localStorage.setItem('fbToken', token);
-      this.setState({ redirect: true })
+      localStorage.setItem("fbToken", token);
+      this.setState({ redirect: true });
     }
-  }
+  };
 
-
-  responseFacebook = (res) => {
-    localStorage.setItem('fbUser', JSON.stringify(res));
-  }
+  responseFacebook = res => {
+    localStorage.setItem("fbUser", JSON.stringify(res));
+  };
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to='/home' />
+      return <Redirect to="/home" />;
     }
-    return(
+    return (
       <div className="social-button">
         <FacebookLogin
           appId="1058917207602672"

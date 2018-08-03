@@ -2,16 +2,12 @@ import React, { Component } from "react";
 import "./SpendingSummary.css";
 import { Progress } from "reactstrap";
 
-
 class SpendingSummary extends Component {
-
   render() {
-    
-
-    var percentage = (this.props.category.current_total) / (this.props.category.goal)*100;
+    var percentage =
+      (this.props.category.current_total / this.props.category.goal) * 100;
     var percent_string = percentage.toString();
     var current_total = this.props.category.current_total;
-    
 
     if (percentage > 100) {
       return (
