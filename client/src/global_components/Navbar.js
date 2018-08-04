@@ -8,6 +8,8 @@ class Navbar extends Component {
     localStorage.removeItem("jwtToken");
     localStorage.removeItem("fbToken");
     localStorage.removeItem("googleToken");
+    localStorage.removeItem("currUser_id");
+    localStorage.removeItem("fbUser");
   };
 
   render() {

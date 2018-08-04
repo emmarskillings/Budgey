@@ -28,10 +28,8 @@ class LoginForm extends Component {
 
     axios.post(`/api/v1/sessions`, { ...this.state.credentials })
       .then(res => {
-        const token = res.data.jwt;
-        const id = res.data.id;
-        localStorage.setItem('jwtToken', token);
-        localStorage.setItem('currUser_id', id);
+        localStorage.setItem('jwtToken', res.data.jwt);
+        localStorage.setItem('currUser_id', res.data.id);
         this.setState({ redirect: true, error: false })
       })
       .catch(error => {

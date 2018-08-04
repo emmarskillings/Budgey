@@ -9,15 +9,14 @@ import { Redirect } from "react-router-dom";
 class IncomePage extends Component {
   update() {
     const { id } = this.props.match.params;
-    axios
-      .get(`/api/v1/category/${id}`)
-      .then(response => {
-        this.setState({
-          category: response.data[0],
-          entries: response.data[1]
-        });
-      })
-      .catch(error => console.log(error));
+    axios.get(`/api/v1/category/${id}`)
+         .then(response => {
+           this.setState({
+             category: response.data[0],
+             entries: response.data[1]
+           });
+          })
+         .catch(error => console.log(error));
   }
 
   componentDidMount() {

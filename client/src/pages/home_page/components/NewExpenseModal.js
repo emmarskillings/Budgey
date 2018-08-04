@@ -13,14 +13,7 @@ class NewExpenseModal extends Component {
     return color;
   };
 
-
-
-
   submitNewCategory = event => {
-    console.log(this.props, 'we testing tho')
-
-
-
 
       event.preventDefault();
         const category = {
@@ -42,10 +35,6 @@ class NewExpenseModal extends Component {
 
 
   render() {
-
-
-
-
 
     const { component: Component, ...props } = this.props
 

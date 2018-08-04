@@ -16,6 +16,7 @@ class LoginWithGoogle extends Component {
     var token = res.accessToken;
     if (token !== undefined) {
       localStorage.setItem("googleToken", token);
+      localStorage.setItem('currUser_id', res.googleId%1000000)
       this.setState({ redirect: true });
     }
   };

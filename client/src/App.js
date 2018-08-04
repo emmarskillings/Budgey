@@ -35,16 +35,15 @@ library.add(
 class App extends Component {
   update() {
     const currUser = localStorage.getItem("currUser_id");
-    axios
-      .get("http://localhost:3002/api/v1/category.json", {
-        params: { user_id: currUser }
-      })
-      .then(response => {
-        this.setState({
-          categories: response.data
-        });
-      })
-      .catch(error => console.log(error));
+    axios.get("http://localhost:3002/api/v1/category.json", {
+            params: { user_id: currUser }
+          })
+         .then(response => {
+           this.setState({
+             categories: response.data
+           });
+          })
+         .catch(error => console.log(error));
   }
 
   componentDidMount() {
