@@ -7,15 +7,6 @@ class CategoryContainer extends Component {
   render() {
     console.log(this.props.categories,'we out here here')
 
-    if (this.props.categories.length === 0){
-      var reverse_labels = ['Food', 'School', 'Hobbies', 'Transportation'];
-      var reverse_dataPoints = [25, 25, 25, 25];
-      
-
-    }
-
-    else{
-    
 
     var dataPoint = [];
     var labels = [];
@@ -27,9 +18,24 @@ class CategoryContainer extends Component {
       }
     });
 
+
+    if (dataPoint.length === 0){
+
+      var reverse_labels = ['Food', 'School', 'Hobbies', 'Transportation'];
+      var reverse_dataPoints = [25, 25, 25, 25];
+      var example_graph_message = 'Example Chart - Add Stuff'
+
+
+    }
+    else{
+
     var reverse_dataPoints = dataPoint.reverse();
     var reverse_labels = labels.reverse();
+    var example_graph_message = ''
   }
+
+
+  
 
     var options = {
       responsive: true,
@@ -57,13 +63,6 @@ class CategoryContainer extends Component {
       ]
     };
 
-    if (this.props.categories.length === 0){
-      var example_graph_message = 'Example Chart - Add Stuff'
-    }
-    else{
-      var example_graph_message = ''
-
-    }
 
 
     return (
