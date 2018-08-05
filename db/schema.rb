@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_204856) do
     t.string "board_type"
 
     t.string "icon"
-    t.string "color"
+   
     t.decimal "goal", precision: 10, scale: 2
     t.decimal "current_total", precision: 10, scale: 2
     t.datetime "created_at", null: false

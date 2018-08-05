@@ -24,10 +24,16 @@ library.add(fab, faCheckSquare, faCoffee, faMap, faTrain, faPhone, faUtensils)
 
 
 const makeCardStack = (cards, update) => {
+  var card_count = 0;
   const allCards = cards.map(card => {
-    console.log(card, "we here ya'll")
-    var icon_living = `${card["icon"]}`
-    console.log(icon_living)
+  card_count++;
+
+    
+  var icon_living = `${card["icon"]}`;
+    
+
+
+  
     switch (card["board_type"]) {
 
       case "expense":
@@ -61,12 +67,20 @@ const makeCardStack = (cards, update) => {
             </div>
           </div>
         );
+       
+
     }
+
   });
   return allCards;
 };
 
 class ExpenseBoard extends Component {
+
+  
+
+
+
   render() {
     const { component: Component, ...props } = this.props;
     return (
@@ -79,7 +93,7 @@ class ExpenseBoard extends Component {
               Add Category
             </button>} modal closeOnDocumentClick>
           {close => (
-            <NewExpenseModal update={props.update} close={close.bind(this)} />
+            <NewExpenseModal   categories={props.categories} update={props.update} close={close.bind(this)} />
           )}
         </Popup>
       </div>

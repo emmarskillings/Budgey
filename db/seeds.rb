@@ -23,7 +23,6 @@ CoolCatTeenX.categories.create!({
 	board_type: 'expense',
 	goal: 100,
 	icon: 'Map',
-	color: 'blue',
 	current_total: 50,
 
 
@@ -34,7 +33,6 @@ CoolCatTeenX.categories.create!({
 	board_type: 'expense',
 	goal: 60,
 	icon: 'Map',
-	color: 'red',
 	current_total: 20
 
 })
@@ -44,7 +42,6 @@ CoolCatTeenX.categories.create!({
 	board_type: 'expense',
 	goal: 250,
 	icon: 'Map',
-	color:'green',
 	current_total: 40
 
 
@@ -55,7 +52,6 @@ CoolCatTeenX.categories.create!({
 	board_type: 'income',
 	goal: 0,
 	icon: 'Map',
-	color:'black',
 	current_total: 50
 
 })
@@ -65,7 +61,6 @@ CoolCatTeenX.categories.create!({
 	board_type: 'income',
 	goal: 10000,
 	icon: 'Map',
-	color:'orange',
 	current_total: 0
 })
 
