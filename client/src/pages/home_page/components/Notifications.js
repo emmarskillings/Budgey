@@ -11,24 +11,25 @@ class Notification extends Component {
   }
 
   createNotification = () => {
-    var overBudget = [];
-    for (var i = 0; i < this.props.categories.length; i++) {
-      if (this.props.categories[i].board_type === "expense") {
-        if (
-          JSON.parse(this.props.categories[i].current_total) >
-          JSON.parse(this.props.categories[i].goal)
-        ) {
-          overBudget.push(this.props.categories[i]);
-        }
+    let overBudget = [];
+
+    this.props.categories.forEach((category) => {
+      if (
+        JSON.parse(category.current_total) >
+        JSON.parse(category.goal)
+      ) {
+        overBudget.push(category);
       }
-    }
-    for (var i = 0; i < overBudget.length; i++) {
+
+    })
+
+    overBudget.forEach((over) => {
       NotificationManager.warning(
-        `You have gone over your budgeting goal for ${overBudget[i].name}`,
+        `You have gone over your budgeting goal for ${over.name}`,
         "Warning",
         5000
       );
-    }
+    })
   };
 
   render() {
