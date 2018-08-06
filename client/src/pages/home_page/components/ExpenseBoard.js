@@ -24,12 +24,12 @@ const makeCardStack = (cards, update) => {
   var card_count = 0;
   const allCards = cards.map(card => {
 
-    
+
   var icon_living = `${card["icon"]}`;
-    
 
 
-  
+
+
 
 
     switch (card["board_type"]) {
@@ -54,7 +54,8 @@ const makeCardStack = (cards, update) => {
                   <Popup trigger={
                       <button
                         type="button"
-                        className="btn btn-outline-danger quick-entry-btn">
+                        className="btn btn-outline-primary quick-entry-btn"
+                      >
                         + Expense Entry
                       </button>
                     } modal closeOnDocumentClick >
@@ -70,7 +71,7 @@ const makeCardStack = (cards, update) => {
             </div>
           </div>
         );
-       
+
 
     }
 
@@ -80,7 +81,7 @@ const makeCardStack = (cards, update) => {
 
 class ExpenseBoard extends Component {
 
-  
+
 
 
 
@@ -94,7 +95,8 @@ class ExpenseBoard extends Component {
         <Popup trigger={
             <button
               type="button"
-              className="btn btn-outline-danger category-btn" >
+              className="btn btn-outline-primary category-btn"
+            >
               Add Category
             </button>
           } modal closeOnDocumentClick >
