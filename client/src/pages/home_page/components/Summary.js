@@ -6,7 +6,7 @@ class CategoryContainer extends Component {
   //Function to update state for messages
 
   render() {
-    
+
 
     const dataPoint = [];
     const labels = [];
@@ -16,7 +16,6 @@ class CategoryContainer extends Component {
       if (category.board_type === "expense") {
         dataPoint.push(category.current_total);
         labels.push(category.name);
-
         colors.push(category.color);
       }
     });

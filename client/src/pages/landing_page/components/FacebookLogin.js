@@ -23,6 +23,7 @@ class LoginWithFacebook extends Component {
 
   responseFacebook = res => {
     localStorage.setItem("fbUser", JSON.stringify(res));
+    localStorage.setItem('currUser_id', JSON.stringify(res));
   };
 
   render() {
