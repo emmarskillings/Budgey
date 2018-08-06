@@ -9,6 +9,8 @@ module Api::V1
 
     def create
       user = User.find_by(email: params[:email])
+      email.strip!
+      email.downcase!
       if user
         if user.authenticate(params[:password])
           jwt = Auth.issue({user: user.id})
