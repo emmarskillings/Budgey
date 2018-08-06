@@ -18,8 +18,6 @@ class CategoryContainer extends Component {
       if (category.board_type === "expense") {
         dataPoint.push(category.current_total);
         labels.push(category.name);
-
-        colors.push(category.color);
       }
     });
 
@@ -40,7 +38,7 @@ class CategoryContainer extends Component {
   }
 
 
-  
+
 
     var options = {
       responsive: true,
@@ -80,7 +78,7 @@ class CategoryContainer extends Component {
         </div>
       </div>
     );
-  
+
 
 
   }
