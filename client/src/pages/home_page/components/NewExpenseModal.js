@@ -13,24 +13,6 @@ class NewExpenseModal extends Component {
   };
 
   submitNewCategory = event => {
-<<<<<<< HEAD
-    event.preventDefault();
-    const category = {
-      name: event.target.categoryName.value,
-      board_type: "expense",
-      icon: event.target.exampleFormControlSelect1.value,
-      color: this.generate_color(),
-      goal: event.target.maxGoal.value,
-      current_total: 0,
-      user_id: Number(localStorage.getItem("currUser_id"))
-    };
-
-    axios.post(`/api/v1/category.json`, { category }).then(res => {
-      this.props.update();
-      this.props.close();
-    });
-  };
-=======
 
       event.preventDefault();
         const category = {
@@ -50,7 +32,6 @@ class NewExpenseModal extends Component {
         })
     }
 
->>>>>>> attempt/thirdParty
 
   render() {
     const { component: Component, ...props } = this.props;

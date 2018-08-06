@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./ExpenseBoard.css";
-<<<<<<< HEAD
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -13,13 +12,6 @@ import {
   faFood,
   faUtensils
 } from "@fortawesome/free-solid-svg-icons";
-=======
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee, faMap, faTrain, faPhone, faFood, faUtensils} from '@fortawesome/free-solid-svg-icons'
->>>>>>> attempt/thirdParty
-
 import NewExpenseModal from "./NewExpenseModal";
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";
@@ -30,11 +22,7 @@ library.add(fab, faCheckSquare, faCoffee, faMap, faTrain, faPhone, faUtensils);
 
 const makeCardStack = (cards, update) => {
   const allCards = cards.map(card => {
-<<<<<<< HEAD
     var icon_living = `${card["icon"]}`;
-=======
-    var icon_living = `${card["icon"]}`
->>>>>>> attempt/thirdParty
     switch (card["board_type"]) {
       case "expense":
         return (

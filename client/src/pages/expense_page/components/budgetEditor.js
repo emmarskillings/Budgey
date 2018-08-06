@@ -11,18 +11,6 @@ class BudgetEditor extends Component {
       category_id: this.props.id
     };
 
-<<<<<<< HEAD
-    axios
-      .put(`/api/v1/category/${this.props.id}.json`, { newGoal })
-      .then(res => {
-        this.props.update();
-        this.props.close();
-        if (this.props.updateHome) {
-          this.props.updateHome();
-        }
-      });
-  };
-=======
       axios.put(`/api/v1/category/${this.props.id}.json`, { newGoal })
            .then(res => {
               this.props.update();
@@ -34,7 +22,6 @@ class BudgetEditor extends Component {
 
     };
 
->>>>>>> attempt/thirdParty
 
   render() {
     const { component: Component, ...props } = this.props;
