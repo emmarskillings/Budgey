@@ -8,15 +8,16 @@ class Navbar extends Component {
     localStorage.removeItem("jwtToken");
     localStorage.removeItem("fbToken");
     localStorage.removeItem("googleToken");
+    this.props.clearState()
   };
 
   render() {
-    var user = localStorage.getItem("jwtToken");
-    var fbUser = localStorage.getItem("fbToken");
-    var googleUser = localStorage.getItem("googleToken");
-    var loginLogout;
-    var navbarBrand;
-    var signup;
+    let user = localStorage.getItem("jwtToken");
+    let fbUser = localStorage.getItem("fbToken");
+    let googleUser = localStorage.getItem("googleToken");
+    let loginLogout;
+    let navbarBrand;
+    let signup;
     if (user || fbUser || googleUser) {
       loginLogout = (
         <NavLink to="/">

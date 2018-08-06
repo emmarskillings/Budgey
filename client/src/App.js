@@ -44,7 +44,13 @@ class App extends Component {
             });
           })
           .catch(error => console.log(error));
-    }
+  }
+
+  clearState() {
+    this.setState({
+      categories: []
+    })
+  }
 
   componentDidMount() {
     console.log("componentDidMount <App />");
@@ -58,7 +64,7 @@ class App extends Component {
           {this.state &&
             this.state.categories && (
               <div>
-                <Navbar />
+                <Navbar clearState = {this.clearState.bind(this)}/>
                 <Switch>
                   <Route exact path="/" component={LandingPage} />
                   <Route path="/signup" component={SignupPage} />
