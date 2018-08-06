@@ -23,7 +23,7 @@ class ExpenseTable extends Component {
           <td>{entry.date}</td>
           <td>$ {entry.amount}</td>
           <td>{entry.description}</td>
-          <td>
+          <td className="text-right">
             <button
               type="button"
               className="btn btn-danger delete-btn entryDelete"
