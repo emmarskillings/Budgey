@@ -10,7 +10,7 @@ class NewIncomeModal extends Component {
       board_type: "income",
       goal: 0,
       current_total: 0,
-      user_id: Number(localStorage.getItem('currUser_id')),
+      user_id: localStorage.getItem('currUser_id'),
     };
 
     axios.post(`/api/v1/category.json`, { category })

@@ -18,7 +18,6 @@ class Notification extends Component {
         }
       }
     }
-    console.log(overBudget)
     for (var i = 0; i < overBudget.length; i++) {
       NotificationManager.warning(`You have gone over your budgeting goal for ${overBudget[i].name}`, 'Warning',  5000);
     }

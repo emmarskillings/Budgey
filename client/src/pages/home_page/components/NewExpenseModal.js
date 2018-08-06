@@ -17,10 +17,6 @@ class NewExpenseModal extends Component {
 
 
   submitNewCategory = event => {
-    console.log(this.props, 'we testing tho')
-
-
-
 
       event.preventDefault();
         const category = {
@@ -30,7 +26,7 @@ class NewExpenseModal extends Component {
           color: this.generate_color(),
           goal: event.target.maxGoal.value,
           current_total: 0,
-          user_id: Number(localStorage.getItem('currUser_id')),
+          user_id: localStorage.getItem('currUser_id'),
       };
 
       axios.post(`/api/v1/category.json`, { category })

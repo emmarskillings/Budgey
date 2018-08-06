@@ -12,14 +12,14 @@ class BudgetEditor extends Component {
         category_id: this.props.id,
       }
 
-      axios.put(`/api/v1/category/${this.props.id}.json`, { newGoal }).then(res => {
-        this.props.update();
-        this.props.close();
-        if (this.props.updateHome) {
-          this.props.updateHome();
-        }
-      });
-
+      axios.put(`/api/v1/category/${this.props.id}.json`, { newGoal })
+           .then(res => {
+              this.props.update();
+              this.props.close();
+              if (this.props.updateHome) {
+                this.props.updateHome();
+              }
+            });
 
     };
 

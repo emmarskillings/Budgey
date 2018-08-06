@@ -4,7 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee, faMap, faTrain, faPhone, faFood, faUtensils} from '@fortawesome/free-solid-svg-icons'
- 
+
 import NewExpenseModal from "./NewExpenseModal";
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";
@@ -25,9 +25,7 @@ library.add(fab, faCheckSquare, faCoffee, faMap, faTrain, faPhone, faUtensils)
 
 const makeCardStack = (cards, update) => {
   const allCards = cards.map(card => {
-    console.log(card, "we here ya'll")
     var icon_living = `${card["icon"]}`
-    console.log(icon_living)
     switch (card["board_type"]) {
 
       case "expense":
