@@ -45,7 +45,6 @@ class HomePage extends Component {
           <Notifications categories={props.categories} />
             <div>
               <Summary categories={props.categories} update={props.update} />
-
             </div>
             <div>
               <ExpenseBoard

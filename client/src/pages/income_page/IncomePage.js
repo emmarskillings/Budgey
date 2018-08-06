@@ -10,16 +10,15 @@ import "./IncomePage.css";
 class IncomePage extends Component {
   update() {
     const { id } = this.props.match.params;
-    axios
-      .get(`/api/v1/category/${id}`)
-      .then(response => {
-        this.setState({
-          category: response.data[0],
-          entries: response.data[1]
-        });
-      })
-      .catch(error => console.log(error));
-  }
+    axios.get(`/api/v1/category/${id}`)
+         .then(response => {
+           this.setState({
+             category: response.data[0],
+             entries: response.data[1]
+           });
+         })
+         .catch(error => console.log(error));
+    }
 
   componentDidMount() {
     this.update();
@@ -44,15 +43,10 @@ class IncomePage extends Component {
                 Total - ${this.state.category.current_total}
               </h4>
               <br />
-              <Popup
-                trigger={
+              <Popup trigger={
                   <button type="button" className="btn btn-outline-danger px-4">
                     Add Entry
-                  </button>
-                }
-                modal
-                closeOnDocumentClick
-              >
+                  </button> } modal closeOnDocumentClick >
                 {close => (
                   <NewIncomeEntry
                     update={this.update.bind(this)}

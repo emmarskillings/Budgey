@@ -21,16 +21,10 @@ import NewEntryModal from "../../expense_page/components/NewEntryModal";
 library.add(fab, faCheckSquare, faCoffee, faMap, faTrain, faPhone, faUtensils);
 
 const makeCardStack = (cards, update) => {
-  var card_count = 0;
+
   const allCards = cards.map(card => {
 
-    
-  var icon_living = `${card["icon"]}`;
-    
-
-
-  
-
+    const icon_living = `${card["icon"]}`;
 
     switch (card["board_type"]) {
       case "expense":
@@ -70,7 +64,6 @@ const makeCardStack = (cards, update) => {
             </div>
           </div>
         );
-       
 
     }
 
@@ -79,10 +72,6 @@ const makeCardStack = (cards, update) => {
 };
 
 class ExpenseBoard extends Component {
-
-  
-
-
 
   render() {
     const { component: Component, ...props } = this.props;

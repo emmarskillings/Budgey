@@ -23,7 +23,7 @@ class Rundown extends Component {
 
     return (
       <div className="rundown mt-3">
-        <h4 className="text-center">You've budgeted...</h4>
+        <h4 className="text-center">You&apos;ve budgeted...</h4>
         <div className="rundown-income d-flex bd-highlight mx-5">
           <div className="mr-auto bd-highlight">
             <h6>Income</h6>

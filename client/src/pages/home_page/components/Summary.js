@@ -6,13 +6,8 @@ class CategoryContainer extends Component {
 
   render() {
 
-    console.log(this.props.categories,'we out here here')
-
-
-
-
-    var dataPoint = [];
-    var labels = [];
+    const dataPoint = [];
+    const labels = [];
 
     this.props.categories.forEach(function(category) {
       if (category.board_type === "expense") {
@@ -21,26 +16,18 @@ class CategoryContainer extends Component {
       }
     });
 
-
     if (dataPoint.length === 0){
-
       var reverse_labels = ['Food', 'School', 'Hobbies', 'Transportation'];
       var reverse_dataPoints = [25, 25, 25, 25];
       var example_graph_message = 'Example Chart - Add Stuff'
 
-
+    } else {
+      var reverse_dataPoints = dataPoint.reverse();
+      var reverse_labels = labels.reverse();
+      var example_graph_message = ''
     }
-    else{
 
-    var reverse_dataPoints = dataPoint.reverse();
-    var reverse_labels = labels.reverse();
-    var example_graph_message = ''
-  }
-
-
-
-
-    var options = {
+    const options = {
       responsive: true,
       legend: {
         display: true,
@@ -56,7 +43,7 @@ class CategoryContainer extends Component {
       }
     };
 
-    var data = {
+    const data = {
       labels: reverse_labels,
       datasets: [
         {
@@ -65,7 +52,6 @@ class CategoryContainer extends Component {
         }
       ]
     };
-
 
 
     return (
@@ -78,8 +64,6 @@ class CategoryContainer extends Component {
         </div>
       </div>
     );
-
-
 
   }
 }

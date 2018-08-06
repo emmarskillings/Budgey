@@ -12,16 +12,15 @@ import "./ExpensePage.css";
 class ExpensePage extends Component {
   update() {
     const id = this.props.match.params["id"];
-    axios
-      .get(`http://localhost:3002/api/v1/category/${id}.json`)
-      .then(response => {
-        this.setState({
-          category: response.data[0],
-          entries: response.data[1]
-        });
-      })
-      .catch(error => console.log(error));
-  }
+    axios.get(`http://localhost:3002/api/v1/category/${id}.json`)
+         .then(response => {
+           this.setState({
+             category: response.data[0],
+             entries: response.data[1]
+           });
+         })
+         .catch(error => console.log(error));
+    }
 
   componentDidMount() {
     this.update();
@@ -46,18 +45,12 @@ class ExpensePage extends Component {
               </h4>
               <BarGraphs card={this.state.category} />
               <div className="mt-4 mb-2">
-                <Popup
-                  trigger={
+                <Popup trigger={
                     <button
                       type="button"
-                      className="btn btn-outline-danger mr-3 px-4"
-                    >
+                      className="btn btn-outline-danger mr-3 px-4">
                       Add Entry
-                    </button>
-                  }
-                  modal
-                  closeOnDocumentClick
-                >
+                    </button> } modal closeOnDocumentClick >
                   {close => (
                     <NewEntryModal
                       update={this.update.bind(this)}
@@ -67,26 +60,21 @@ class ExpensePage extends Component {
                     />
                   )}
                 </Popup>
-                <Popup
-                  trigger={
+                <Popup trigger={
                     <button
                       type="button"
                       className="btn btn-outline-danger px-4"
                     >
                       Edit Budget Amount
-                    </button>
-                  }
-                  modal
-                  closeOnDocumentClick
-                >
-                  {close => (
-                    <BudgetEditor
-                      update={this.update.bind(this)}
-                      id={this.state.category.id}
-                      updateHome={this.props.update}
-                      close={close.bind(this)}
-                    />
-                  )}
+                    </button> } modal closeOnDocumentClick >
+                    {close => (
+                      <BudgetEditor
+                        update={this.update.bind(this)}
+                        category={this.state.category}
+                        updateHome={this.props.update}
+                        close={close.bind(this)}
+                      />
+                    )}
                 </Popup>
               </div>
               <ExpenseTable

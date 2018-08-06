@@ -17,16 +17,15 @@ class NewExpenseEntry extends Component {
       };
 
       axios.post(`http://localhost:3002/api/v1/entry.json`, { entry })
-        .then(res => {
-          this.props.update()
-        })
+           .then(res => {
+              this.props.update()
+            })
 
     }
 
 
   render() {
     const { component: Component, ...props } = this.props
-   
 
     return (
       <form onSubmit={ this.submitNewCategory }>
@@ -44,7 +43,7 @@ class NewExpenseEntry extends Component {
             />
           </div>
         </div>
-    
+
         <div className="form-group row px-4">
           <label htmlFor="maxGoal" className="col-sm-3 col-form-label">
             Amount:
