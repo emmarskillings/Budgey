@@ -19,7 +19,6 @@ class CategoryContainer extends Component {
         dataPoint.push(category.current_total);
         labels.push(category.name);
 
-        colors.push(category.color);
       }
     });
 
@@ -62,7 +61,7 @@ class CategoryContainer extends Component {
       labels: reverse_labels,
       datasets: [
         {
-          backgroundColor: ['#740001','#ae0001',' #eeba30','#d3a625','#000000','#f72f53','#000080','#008000','#fef65b','#9EB6B8', '#767BA5', '#2C3571', '#008080', '#FF6347'],
+          backgroundColor: ['#ae0001',' #eeba30','#000000','#f72f53','#000080','#008000','#fef65b','#9EB6B8', '#767BA5', '#2C3571', '#008080', '#FF6347'],
           data: reverse_dataPoints
         }
       ]

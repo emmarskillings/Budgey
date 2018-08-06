@@ -9,11 +9,42 @@ class NewExpenseModal extends Component {
 
       event.preventDefault();
 
+      var icon_name = ''
+
+      if (event.target.exampleFormControlSelect1.value === 'Food'){
+        icon_name = 'utensils'
+
+      }
+      else if (event.target.exampleFormControlSelect1.value === 'Transportation'){
+        icon_name = 'train'
+
+      }
+      else if (event.target.exampleFormControlSelect1.value === 'Home Expenses'){
+        icon_name = 'home'
+        
+      }
+      else if (event.target.exampleFormControlSelect1.value === 'Entertainment'){
+        icon_name = 'film'
+      }
+      else if (event.target.exampleFormControlSelect1.value === 'Shopping'){
+        icon_name = 'shopping-bag'
+      }
+      else if (event.target.exampleFormControlSelect1.value === 'Alcohol'){
+        icon_name = 'wine-glass'
+      }
+      else if (event.target.exampleFormControlSelect1.value === 'Vacation'){
+        icon_name = 'map'
+      }
+      else if (event.target.exampleFormControlSelect1.value === 'Other'){
+        icon_name = 'asterisk'
+      }
+
+
      
         const category = {
           name: event.target.categoryName.value,
           board_type: 'expense',
-          icon: event.target.exampleFormControlSelect1.value,
+          icon: icon_name,
          
           goal: event.target.maxGoal.value,
           current_total: 0,
@@ -68,11 +99,16 @@ class NewExpenseModal extends Component {
           </label>
           <div className="col-sm-9">
             <select className="form-control" id="exampleFormControlSelect1">
-              <option>map</option>
-              <option>coffee</option>
-              <option>train</option>
-              <option>phone</option>
-              <option>utensils</option>
+              <option>Food</option>
+              <option>Transportation</option>
+              <option>Home Expenses</option>
+              <option>Entertainment</option>
+              <option>Shopping</option>
+              <option>Alcohol</option>
+              <option>Vacation</option>
+              <option>Other</option>
+
+
             </select>
           </div>
         </div>
