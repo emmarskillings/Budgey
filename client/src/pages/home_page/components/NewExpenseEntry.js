@@ -16,8 +16,6 @@ class NewExpenseEntry extends Component {
           category_id: this.props.category.id,
       };
 
-      console.log(entry)
-
       axios.post(`http://localhost:3002/api/v1/entry.json`, { entry })
         .then(res => {
           this.props.update()
@@ -92,7 +90,7 @@ class NewExpenseEntry extends Component {
 
         <div className="form-group row px-4">
           <div className="col-sm-12">
-            <button category={this.props.category} update={this.props.update}  type="submit" className="btn btn-primary px-4">
+            <button category={this.props.category} update={this.props.update}  type="submit" className="btn btn-outline-danger px-4">
               Add
             </button>
           </div>

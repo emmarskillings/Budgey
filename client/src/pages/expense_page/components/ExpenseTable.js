@@ -23,11 +23,19 @@ class ExpenseTable extends Component {
           <td>{entry.date}</td>
           <td>$ {entry.amount}</td>
           <td>{entry.description}</td>
-          <td>
+          <td className="text-right">
             <button
               type="button"
-              className="btn btn-primary delete-btn entryDelete"
-              onClick={() => this.deleteEntry(entry.id)}
+              className="btn btn-danger delete-btn entryDelete"
+              onClick={e => {
+                if (
+                  window.confirm(
+                    "Are you sure you want to delete this expense entry?\nYou will not be able to undo this action."
+                  )
+                ) {
+                  this.deleteEntry(entry.id);
+                }
+              }}
             >
               <FontAwesomeIcon icon="trash" />
             </button>
@@ -80,11 +88,19 @@ class ExpenseTable extends Component {
             </thead>
             <tbody>{this.makeEntryRow(props.entries)}</tbody>
           </table>
-          <br />
+
           <button
             type="button"
-            className="btn btn-primary delete-btn"
-            onClick={this.deleteCategory.bind(this)}
+            className="btn btn-outline-danger delete-btn"
+            onClick={e => {
+              if (
+                window.confirm(
+                  "Are you sure you want to delete this entire category?\nThis will result in the loss of all your expense entry data.\nYou will not be able to undo this action."
+                )
+              ) {
+                this.deleteCategory(e);
+              }
+            }}
           >
             Delete Category
           </button>

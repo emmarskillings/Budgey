@@ -17,9 +17,8 @@ ActiveRecord::Schema.define(version: 2018_07_25_204856) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.string "user_id"
     t.string "board_type"
-
     t.string "icon"
    
     t.decimal "goal", precision: 10, scale: 2

@@ -5,7 +5,10 @@ import { Doughnut } from "react-chartjs-2";
 class CategoryContainer extends Component {
 
   render() {
+
     console.log(this.props.categories,'we out here here')
+
+
 
 
     var dataPoint = [];
@@ -15,6 +18,8 @@ class CategoryContainer extends Component {
       if (category.board_type === "expense") {
         dataPoint.push(category.current_total);
         labels.push(category.name);
+
+        colors.push(category.color);
       }
     });
 

@@ -4,6 +4,7 @@ import axios from "axios";
 
 class NewExpenseModal extends Component {
 
+
   submitNewCategory = event => {
 
       event.preventDefault();
@@ -16,7 +17,7 @@ class NewExpenseModal extends Component {
          
           goal: event.target.maxGoal.value,
           current_total: 0,
-          user_id: Number(localStorage.getItem('currUser_id')),
+          user_id: localStorage.getItem('currUser_id'),
       };
 
 
@@ -41,7 +42,9 @@ class NewExpenseModal extends Component {
 
 
 
+
     const { component: Component, ...props } = this.props
+
 
     return (
       <form onSubmit={this.submitNewCategory}>
