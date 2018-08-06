@@ -9,6 +9,7 @@ class NewExpenseModal extends Component {
 
       event.preventDefault();
 
+
       var icon_name = ''
 
       if (event.target.exampleFormControlSelect1.value === 'Food'){
@@ -45,7 +46,6 @@ class NewExpenseModal extends Component {
           name: event.target.categoryName.value,
           board_type: 'expense',
           icon: icon_name,
-         
           goal: event.target.maxGoal.value,
           current_total: 0,
           user_id: localStorage.getItem('currUser_id'),
@@ -53,26 +53,14 @@ class NewExpenseModal extends Component {
 
 
       axios.post(`/api/v1/category.json`, { category })
-        .then(res => {
-          
+        .then(res => {        
           this.props.update()
           this.props.close()
-          
-
         })
     }
 
 
-    
-
-
   render() {
-
-
-
-
-
-
 
     const { component: Component, ...props } = this.props
 
@@ -127,7 +115,7 @@ class NewExpenseModal extends Component {
         </div>
         <div className="form-group row px-4">
           <div className="col-sm-12">
-            <button type="submit" className="btn btn-outline-danger px-4">
+            <button type="submit" className="btn btn-outline-primary px-4">
               Add
             </button>
           </div>

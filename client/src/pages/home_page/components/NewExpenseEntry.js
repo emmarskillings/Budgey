@@ -26,7 +26,7 @@ class NewExpenseEntry extends Component {
 
   render() {
     const { component: Component, ...props } = this.props
-   
+
 
     return (
       <form onSubmit={ this.submitNewCategory }>
@@ -44,7 +44,7 @@ class NewExpenseEntry extends Component {
             />
           </div>
         </div>
-    
+
         <div className="form-group row px-4">
           <label htmlFor="maxGoal" className="col-sm-3 col-form-label">
             Amount:
@@ -90,7 +90,7 @@ class NewExpenseEntry extends Component {
 
         <div className="form-group row px-4">
           <div className="col-sm-12">
-            <button category={this.props.category} update={this.props.update}  type="submit" className="btn btn-outline-danger px-4">
+            <button category={this.props.category} update={this.props.update}  type="submit" className="btn btn-outline-primary px-4">
               Add
             </button>
           </div>

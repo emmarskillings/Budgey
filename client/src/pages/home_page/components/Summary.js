@@ -39,7 +39,7 @@ class CategoryContainer extends Component {
   }
 
 
-  
+
 
     var options = {
       responsive: true,
@@ -79,7 +79,7 @@ class CategoryContainer extends Component {
         </div>
       </div>
     );
-  
+
 
 
   }

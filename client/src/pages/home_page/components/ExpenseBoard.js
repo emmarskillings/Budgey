@@ -27,12 +27,12 @@ const makeCardStack = (cards, update) => {
   var card_count = 0;
   const allCards = cards.map(card => {
 
-    
+
   var icon_living = `${card["icon"]}`;
-    
 
 
-  
+
+
 
 
     switch (card["board_type"]) {
@@ -54,24 +54,19 @@ const makeCardStack = (cards, update) => {
                   <BarGraphs card={card} />
                 </div>
                 <div className="col-md-2 my-auto">
-                  <Popup
-                    trigger={
+                  <Popup trigger={
                       <button
                         type="button"
-                        className="btn btn-outline-danger quick-entry-btn"
+                        className="btn btn-outline-primary quick-entry-btn"
                       >
                         + Expense Entry
                       </button>
-                    }
-                    modal
-                    closeOnDocumentClick
-                  >
+                    } modal closeOnDocumentClick >
                     {close => (
                       <NewEntryModal
                         id={card.id}
                         update={update}
-                        close={close.bind(this)}
-                      />
+                        close={close.bind(this)} />
                     )}
                   </Popup>
                 </div>
@@ -79,7 +74,7 @@ const makeCardStack = (cards, update) => {
             </div>
           </div>
         );
-       
+
 
     }
 
@@ -89,7 +84,7 @@ const makeCardStack = (cards, update) => {
 
 class ExpenseBoard extends Component {
 
-  
+
 
 
 
@@ -100,18 +95,14 @@ class ExpenseBoard extends Component {
         <div id="expense-card-container">
           {makeCardStack(props.categories, props.update)}
         </div>
-        <Popup
-          trigger={
+        <Popup trigger={
             <button
               type="button"
-              className="btn btn-outline-danger category-btn"
+              className="btn btn-outline-primary category-btn"
             >
               Add Category
             </button>
-          }
-          modal
-          closeOnDocumentClick
-        >
+          } modal closeOnDocumentClick >
           {close => (
             <NewExpenseModal   categories={props.categories} update={props.update} close={close.bind(this)} />
           )}

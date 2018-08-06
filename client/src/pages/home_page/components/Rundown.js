@@ -18,7 +18,7 @@ class Rundown extends Component {
     const amount_left = (total_income - total_expenses).toFixed(2);
     let color = "rgb(139, 179, 88)";
     if (amount_left < 0) {
-      color = "rgb(250, 77, 65)";
+      color = "black";
     }
 
     return (
@@ -30,7 +30,7 @@ class Rundown extends Component {
           </div>
           <div className="ml-auto bd-highlight" id="total-income">
             <NumberFormat
-              value={`${total_income}`}
+              value={`${total_income.toFixed(2)}`}
               displayType={"text"}
               thousandSeparator={true}
               prefix={"$"}
@@ -43,7 +43,7 @@ class Rundown extends Component {
           </div>
           <div className="ml-auto bd-highlight" id="total-expenses">
             <NumberFormat
-              value={`${total_expenses}`}
+              value={`${total_expenses.toFixed(2)}`}
               displayType={"text"}
               thousandSeparator={true}
               prefix={"-$"}

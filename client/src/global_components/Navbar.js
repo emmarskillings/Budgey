@@ -8,19 +8,20 @@ class Navbar extends Component {
     localStorage.removeItem("jwtToken");
     localStorage.removeItem("fbToken");
     localStorage.removeItem("googleToken");
+    this.props.clearState()
   };
 
   render() {
-    var user = localStorage.getItem("jwtToken");
-    var fbUser = localStorage.getItem("fbToken");
-    var googleUser = localStorage.getItem("googleToken");
-    var loginLogout;
-    var navbarBrand;
-    var signup;
+    let user = localStorage.getItem("jwtToken");
+    let fbUser = localStorage.getItem("fbToken");
+    let googleUser = localStorage.getItem("googleToken");
+    let loginLogout;
+    let navbarBrand;
+    let signup;
     if (user || fbUser || googleUser) {
       loginLogout = (
         <NavLink to="/">
-          <div className="navbar-right-div logout" onClick={this.logout}>
+          <div className="navbar-right-div btn btn-outline-warning logout" onClick={this.logout}>
             Logout
           </div>
         </NavLink>
@@ -33,12 +34,12 @@ class Navbar extends Component {
     } else {
       loginLogout = (
         <NavLink to="/login">
-          <div className="navbar-right-div login">Login</div>
+          <div className="navbar-right-div btn btn-outline-warning login">Login</div>
         </NavLink>
       );
       signup = (
         <NavLink to="/signup">
-          <div className="navbar-right-div login">Signup</div>
+          <div className="navbar-right-div btn btn-outline-warning login">Signup</div>
         </NavLink>
       );
       navbarBrand = (
