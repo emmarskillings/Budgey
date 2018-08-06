@@ -14,7 +14,6 @@ class LoginWithFacebook extends Component {
     var user = JSON.parse(localStorage.getItem("fbUser"));
     if (user) {
       var token = user.accessToken;
-      console.log(token);
     }
     if (token !== undefined) {
       localStorage.setItem("fbToken", token);
