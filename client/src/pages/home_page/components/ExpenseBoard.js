@@ -46,7 +46,7 @@ const makeCardStack = (cards, update) => {
                     trigger={
                       <button
                         type="button"
-                        className="btn btn-outline-danger quick-entry-btn"
+                        className="btn btn-outline-primary quick-entry-btn"
                       >
                         + Expense Entry
                       </button>
@@ -84,7 +84,7 @@ class ExpenseBoard extends Component {
           trigger={
             <button
               type="button"
-              className="btn btn-outline-danger category-btn"
+              className="btn btn-outline-primary category-btn"
             >
               Add Category
             </button>

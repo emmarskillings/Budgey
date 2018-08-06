@@ -9,7 +9,6 @@ class LandingPage extends Component {
     return (
       <Container className="landing-body">
         <Content />
-        <LoginWithFacebook />
         <LoginWithGoogle />
       </Container>
     );

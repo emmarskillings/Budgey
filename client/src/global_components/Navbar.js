@@ -20,7 +20,7 @@ class Navbar extends Component {
     if (user || fbUser || googleUser) {
       loginLogout = (
         <NavLink to="/">
-          <div className="navbar-right-div logout" onClick={this.logout}>
+          <div className="navbar-right-div btn btn-outline-warning logout" onClick={this.logout}>
             Logout
           </div>
         </NavLink>
@@ -33,12 +33,12 @@ class Navbar extends Component {
     } else {
       loginLogout = (
         <NavLink to="/login">
-          <div className="navbar-right-div login">Login</div>
+          <div className="navbar-right-div btn btn-outline-warning login">Login</div>
         </NavLink>
       );
       signup = (
         <NavLink to="/signup">
-          <div className="navbar-right-div login">Signup</div>
+          <div className="navbar-right-div btn btn-outline-warning login">Signup</div>
         </NavLink>
       );
       navbarBrand = (
