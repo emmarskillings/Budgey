@@ -13,7 +13,7 @@ import {
   faUtensils,
   faAsterisk,
   faShoppingBag
- 
+
 } from "@fortawesome/free-solid-svg-icons";
 import NewExpenseModal from "./NewExpenseModal";
 import Popup from "reactjs-popup";
@@ -26,15 +26,7 @@ library.add(fab, faWineGlass, faMap, faTrain, faFilm, faUtensils, faHome, faAste
 const makeCardStack = (cards, update) => {
   var card_count = 0;
   const allCards = cards.map(card => {
-
-
-  var icon_living = `${card["icon"]}`;
-
-
-
-
-
-
+  const icon_living = `${card["icon"]}`;
     switch (card["board_type"]) {
       case "expense":
         return (
@@ -74,8 +66,6 @@ const makeCardStack = (cards, update) => {
             </div>
           </div>
         );
-
-
     }
 
   });
@@ -83,11 +73,6 @@ const makeCardStack = (cards, update) => {
 };
 
 class ExpenseBoard extends Component {
-
-
-
-
-
   render() {
     const { component: Component, ...props } = this.props;
     return (
