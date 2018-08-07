@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Tabs, Tab } from "react-bootstrap";
 import "./Rundown.css";
 import NumberFormat from "react-number-format";
 
@@ -24,48 +25,55 @@ class Rundown extends Component {
     return (
       <div className="rundown mt-3">
         <h4 className="text-center">You've budgeted...</h4>
-        <div className="rundown-income d-flex bd-highlight mx-5">
-          <div className="mr-auto bd-highlight">
-            <h6>Income</h6>
-          </div>
-          <div className="ml-auto bd-highlight" id="total-income">
-            <NumberFormat
-              value={`${total_income.toFixed(2)}`}
-              displayType={"text"}
-              thousandSeparator={true}
-              prefix={"$"}
-            />
-          </div>
-        </div>
-        <div className="rundown-spending d-flex bd-highlight mx-5">
-          <div className="mr-auto bd-highlight">
-            <h6>Spending</h6>
-          </div>
-          <div className="ml-auto bd-highlight" id="total-expenses">
-            <NumberFormat
-              value={`${total_expenses.toFixed(2)}`}
-              displayType={"text"}
-              thousandSeparator={true}
-              prefix={"-$"}
-            />
-          </div>
-        </div>
-        <hr width="80%" />
-        <div className="rundown-leftover d-flex bd-highlight mx-5">
-          <div className="mr-auto bd-highlight">
-            <h6>Leftover</h6>
-          </div>
-          <div className="ml-auto bd-highlight">
-            <p id="amount-left" style={{ color: color }}>
-              <NumberFormat
-                value={`${amount_left}`}
-                displayType={"text"}
-                thousandSeparator={true}
-                prefix={"$"}
-              />
-            </p>
-          </div>
-        </div>
+        <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
+          <Tab eventKey={1} title="Tab 1">
+            <div className="rundown-income d-flex bd-highlight mx-5">
+              <div className="mr-auto bd-highlight">
+                <h6>Income</h6>
+              </div>
+              <div className="ml-auto bd-highlight" id="total-income">
+                <NumberFormat
+                  value={`${total_income.toFixed(2)}`}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"$"}
+                />
+              </div>
+            </div>
+            <div className="rundown-spending d-flex bd-highlight mx-5">
+              <div className="mr-auto bd-highlight">
+                <h6>Spending</h6>
+              </div>
+              <div className="ml-auto bd-highlight" id="total-expenses">
+                <NumberFormat
+                  value={`${total_expenses.toFixed(2)}`}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"-$"}
+                />
+              </div>
+            </div>
+            <hr width="80%" />
+            <div className="rundown-leftover d-flex bd-highlight mx-5">
+              <div className="mr-auto bd-highlight">
+                <h6>Leftover</h6>
+              </div>
+              <div className="ml-auto bd-highlight">
+                <p id="amount-left" style={{ color: color }}>
+                  <NumberFormat
+                    value={`${amount_left}`}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    prefix={"$"}
+                  />
+                </p>
+              </div>
+            </div>
+          </Tab>
+          <Tab eventKey={2} title="Tab 2">
+            Tab 2 content
+          </Tab>
+        </Tabs>
       </div>
     );
   }
