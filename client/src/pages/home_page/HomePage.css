@@ -4,3 +4,11 @@
 #right-div {
  box-shadow: 60px 0px 100px -90px #000000;
 }
+.btn-outline-primary {
+  color: #4056A1;
+  border-color: #4056A1;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:active {
+  background-color: #4056A1;
+}
