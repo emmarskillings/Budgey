@@ -28,7 +28,10 @@ class Navbar extends Component {
       );
       navbarBrand = (
         <NavLink to="/home">
-          <div className="navbar-brand">Budgey</div>
+          <div className="navbar-brand">
+            <img src={require("./logo.png")} width="40" height="30" className="mr-1" />
+            Budgey
+          </div>
         </NavLink>
       );
     } else {
@@ -44,7 +47,10 @@ class Navbar extends Component {
       );
       navbarBrand = (
         <NavLink to="/">
-          <div className="navbar-brand">Budgey</div>
+          <div className="navbar-brand">
+            <img src={require("./logo.png")} width="40" height="30" className="mr-1"/>
+            Budgey
+          </div>
         </NavLink>
       );
     }
