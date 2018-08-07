@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Tabs, Tab } from "react-bootstrap";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import "./Rundown.css";
 import NumberFormat from "react-number-format";
 
@@ -25,8 +26,12 @@ class Rundown extends Component {
     return (
       <div className="rundown mt-3">
         <h4 className="text-center">You've budgeted...</h4>
-        <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
-          <Tab eventKey={1} title="Tab 1">
+        <Tabs>
+          <TabList>
+            <Tab>Current</Tab>
+            <Tab>Projected</Tab>
+          </TabList>
+          <TabPanel>
             <div className="rundown-income d-flex bd-highlight mx-5">
               <div className="mr-auto bd-highlight">
                 <h6>Income</h6>
@@ -40,6 +45,7 @@ class Rundown extends Component {
                 />
               </div>
             </div>
+
             <div className="rundown-spending d-flex bd-highlight mx-5">
               <div className="mr-auto bd-highlight">
                 <h6>Spending</h6>
@@ -53,7 +59,9 @@ class Rundown extends Component {
                 />
               </div>
             </div>
+
             <hr width="80%" />
+
             <div className="rundown-leftover d-flex bd-highlight mx-5">
               <div className="mr-auto bd-highlight">
                 <h6>Leftover</h6>
@@ -69,10 +77,11 @@ class Rundown extends Component {
                 </p>
               </div>
             </div>
-          </Tab>
-          <Tab eventKey={2} title="Tab 2">
-            Tab 2 content
-          </Tab>
+          </TabPanel>
+
+          <TabPanel>
+            <h2>Any content 2</h2>
+          </TabPanel>
         </Tabs>
       </div>
     );
