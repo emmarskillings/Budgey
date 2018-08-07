@@ -54,11 +54,9 @@ class SignupForm extends Component {
     }
     return (
       <div className="signup-new-user">
-        <header className="signup-page-header text-center my-3">
-          <h1>Sign Up</h1>
-        </header>
         <div className="d-flex justify-content-center">
-          <form className="shadow p-3 mb-4 bg-white" onSubmit={this.onSave}>
+          <form className="shadow py-4 px-5 mt-4 bg-white" onSubmit={this.onSave}>
+            <h1 className="text-center mb-2">Sign Up</h1>
             <div className="form-group input">
               First Name{" "}
               <input
@@ -119,16 +117,17 @@ class SignupForm extends Component {
                 onChange={this.onChange}
               />
             </div>
-            <div className="form-group submit text-center">
+            <div className="form-group submit text-center my-3">
               <input type="submit" className="btn btn-custom btn-primary" />
             </div>
+            {error}
+            <div className="signup-message text-center">
+              <p>
+                Already have an account? Click <a href="/login">here</a> to sign
+                in.
+              </p>
+            </div>
           </form>
-        </div>
-        {error}
-        <div className="signup-message text-center">
-          <p>
-            Already have an account? Click <a href="/login">here</a> to sign in.
-          </p>
         </div>
       </div>
     );
