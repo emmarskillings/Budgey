@@ -35,7 +35,7 @@ library.add(
 class App extends Component {
   update() {
     const currUser = localStorage.getItem("currUser_id");
-    axios.get("http://localhost:3002/api/v1/category.json", {
+    axios.get("/api/v1/category", {
             params: { user_id: currUser }
           })
           .then(response => {
