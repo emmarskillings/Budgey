@@ -55,7 +55,7 @@ class Navbar extends Component {
       );
     }
     return (
-      <nav className="navbar justify-content-between mb-3 px-5">
+      <nav className="navbar justify-content-between px-5">
         {navbarBrand}
         <div className="navbar justify-content-between">
           {signup}

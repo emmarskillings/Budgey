@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Content.css";
+import LoginWithGoogle from "./GoogleLogin";
 
 class Content extends Component {
   render() {
@@ -13,6 +14,7 @@ class Content extends Component {
         <p className="content-message">
           Been here before? <a href="/login">Log in</a> to keep budgeting!
         </p>
+        <LoginWithGoogle />
       </div>
     );
   }
