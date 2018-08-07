@@ -11,28 +11,28 @@
   background-size: cover;
 }
 .description {
-  margin: 11rem 0 0 8rem;
+  margin: 11rem 0 0 10.6rem;
+}
+.description h4 {
+  font-weight: 300;
+  font-size: 2rem;
 }
 .description h1 {
   text-transform: uppercase;
-  font-size: 4rem;
+  font-weight: 700;
+  font-size: 4.4rem;
 }
-.tagline {
-  padding-bottom: 2em;
+.description h6 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 2.6rem;
 }
-.content-message {
-  padding-bottom: 0.5em;
+.description p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin: 0.2rem;
 }
-.social-button {
-  margin: auto;
-  width: auto;
-  text-align: center;
-  padding-top: 2em;
-}
-.google-login .button {
-  background: black;
-}
-.my-facebook-button-class {
+/* .my-facebook-button-class {
   background: #4267b2;
   border-radius: 5px;
   color: white;
@@ -42,14 +42,15 @@
 }
 .fa-facebook {
   margin-right: 20px;
-}
+} */
 .google-login {
-  background: #dd4b39;
+  background: #4056A1;
   border-radius: 5px;
   color: white;
   height: 40px;
   text-align: center;
   width: 200px;
+  margin-top: 0.8rem;
 }
 .fa-google {
   margin-right: 10px;

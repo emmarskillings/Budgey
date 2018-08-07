@@ -7,14 +7,11 @@ class Content extends Component {
     return (
       <div className="landing-content">
         <div className="description">
-          <h1>Welcome to Budgey!</h1>
-          <h5 className="tagline">Your friendly budgeting buddy</h5>
-          <p className="content-message">
-            Are you a first time budgeter? <a href="/signup">Register now.</a>
-          </p>
-          <p className="content-message">
-            Been here before? <a href="/login">Log in</a> to keep budgeting!
-          </p>
+          <h4>Welcome to</h4>
+          <h1>Budgey</h1>
+          <h6>Your friendly budgeting buddy.</h6>
+          <p>Are you a first time budgeter? <a href="/signup">Register now.</a></p>
+          <p>Been here before? <a href="/login">Log in</a> to keep budgeting!</p>
           <LoginWithGoogle />
         </div>
       </div>
