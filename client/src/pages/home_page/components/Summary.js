@@ -36,19 +36,19 @@ class CategoryContainer extends Component {
 
 
     var options = {
-      responsive: true,
+      responsive: false,
       legend: {
         display: true,
         position: "right"
       },
-      layout: {
-        padding: {
-          left: 0,
-          right: 300,
-          top: 0,
-          bottom: 0
-        }
-      }
+      // layout: {
+      //   padding: {
+      //     left: 0,
+      //     right: 300,
+      //     top: 0,
+      //     bottom: 0
+      //   }
+      // }
     };
 
     var data = {
@@ -67,8 +67,8 @@ class CategoryContainer extends Component {
       <div className="summary text-center">
         <h4 className="py-3">Expenses</h4>
         <h5>{example_graph_message}</h5>
-        <div className="pt-2" id="pie-chart">
-          <Doughnut data={data} options={options} height={85} />
+        <div className="pie-chart">
+          <Doughnut data={data} options={options} height={200} />
         </div>
       </div>
     );
