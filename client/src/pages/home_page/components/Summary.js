@@ -5,12 +5,6 @@ import { Doughnut } from "react-chartjs-2";
 class CategoryContainer extends Component {
 
   render() {
-
-    console.log(this.props.categories,'we out here here')
-
-
-
-
     var dataPoint = [];
     var labels = [];
 
@@ -71,7 +65,6 @@ class CategoryContainer extends Component {
 
     return (
       <div className="summary text-center">
-
         <h4 className="py-3">Expenses</h4>
         <h5>{example_graph_message}</h5>
         <div className="pt-2" id="pie-chart">
