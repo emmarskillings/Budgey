@@ -23,5 +23,10 @@
 
 #income-go-home {
   margin-left: 1em;
+}
 
+.dropdown-button,
+.dropdown-button:hover,
+.dropdown-button:active {
+  background-color: #4056A1;
 }

@@ -35,7 +35,7 @@ const makeCardStack = (cards, update) => {
               <div className="row">
                 <div className="col-md-2">
                   <NavLink to={`/expense/${card["id"]}`}>
-                    <FontAwesomeIcon icon={icon_living} />
+                    <FontAwesomeIcon className="icons mb-2" icon={icon_living} />
                     <h5 className="card-title">{card["name"]}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">
                       Budgeted - ${card["goal"]}

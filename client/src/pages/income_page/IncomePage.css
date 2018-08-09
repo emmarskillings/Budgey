@@ -15,3 +15,9 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.dropdown-button,
+.dropdown-button:hover,
+.dropdown-button:active {
+  background-color: #4056A1;
+}

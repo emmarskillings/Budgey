@@ -69,7 +69,7 @@ class ExpensePage extends Component {
         {this.state &&
           this.state.entries && (
             <div className="expense-page">
-              <a href="/home" className="btn btn-outline-primary px-4" id="income-go-home"><FontAwesomeIcon icon="home" /></a>
+              <a href="/home" className="btn btn-outline-primary px-3 mt-4" id="income-go-home"><FontAwesomeIcon icon="home" /></a>
               <h1 className="text-center">{this.state.category.name}</h1>
               <h4 className="text-center mb-4" id="expense-budgeted">
                 Budgeted - ${this.state.category.goal}
@@ -108,8 +108,8 @@ class ExpensePage extends Component {
                   )}
                 </Popup>
 
-                <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                  <DropdownToggle caret>
+                <Dropdown isOpen={this.state.dropdownOpen} size="md" toggle={this.toggle}>
+                <DropdownToggle caret color="primary" className="dropdown-button">
                     Change View
                   </DropdownToggle>
                   <DropdownMenu>

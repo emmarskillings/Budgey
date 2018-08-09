@@ -27,7 +27,7 @@ class HomePage extends Component {
       return <Redirect to="/login" />;
     }
     return (
-      <Container>
+      <Container className="mt-3">
         <Row>
           <div className="col-md-3" id="left-div">
             <IncomeBoard
