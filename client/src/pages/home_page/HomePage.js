@@ -6,6 +6,7 @@ import Summary from "./components/Summary";
 import IncomeBoard from "./components/IncomeBoard";
 import Rundown from "./components/Rundown";
 import Notifications from './components/Notifications'
+import Footer from "../../global_components/Footer";
 import { Redirect } from 'react-router-dom';
 
 class HomePage extends Component {
@@ -56,6 +57,7 @@ class HomePage extends Component {
             </div>
           </div>
         </Row>
+        <Footer />
       </Container>
     );
   }
