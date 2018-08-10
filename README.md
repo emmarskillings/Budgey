@@ -24,12 +24,12 @@ Open two terminals and run “rails -s p 3001 -b 0.0.0.0” from the root direct
 Can be found at/will run on localhost:3000 in your browser
 
 ## Tech Stack/Dependencies
-React.JS
-Bootstrap4
-CSS3
-Chart.JS
-Axios
-ReactStrap
-Ruby  → 2.3.5p376
-Rails → 5.2.0
-PostgreSQL
+ - React.JS
+ - Bootstrap4
+ - CSS3
+ - Chart.JS
+ - Axios
+ - ReactStrap
+ - Ruby  → 2.3.5p376
+ - Rails → 5.2.0
+ - PostgreSQL
