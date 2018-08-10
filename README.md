@@ -1,4 +1,4 @@
-#BUDGEY - Lighthouse Labs Final Project
+# BUDGEY - Lighthouse Labs Final Project
 
 **Creators: Zohaib Hassan, Eric Joo, Emma Skillings, Eliza Moore**
 
