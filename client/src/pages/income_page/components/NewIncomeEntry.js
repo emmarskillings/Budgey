@@ -37,7 +37,7 @@ class NewIncomeEntry extends Component {
               type="text"
               className="form-control"
               id="entryName"
-              placeholder="i.e. item X"
+              placeholder="Pay"
             />
           </div>
         </div>
@@ -50,7 +50,7 @@ class NewIncomeEntry extends Component {
               type="text"
               className="form-control"
               id="amount"
-              placeholder="i.e. $75.00"
+              placeholder="75.00"
             />
           </div>
         </div>
@@ -63,7 +63,7 @@ class NewIncomeEntry extends Component {
               type="text"
               className="form-control"
               id="description"
-              placeholder="i.e. from sources Y"
+              placeholder="Any additional notes"
             />
           </div>
         </div>
@@ -76,7 +76,7 @@ class NewIncomeEntry extends Component {
               type="date"
               className="form-control"
               id="date"
-              placeholder="i.e. $75.00"
+              placeholder="75.00"
             />
           </div>
         </div>
